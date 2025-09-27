@@ -1,0 +1,49 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[dev]
+  command = "pnpm dev"
+  port = 4321
+
+# Redirect old path structure to new article structure
+[[redirects]]
+  from = "/2020/*"
+  to = "/articles/2020/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/2021/*"
+  to = "/articles/2021/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/here-we-go-again"
+  to = "/articles/here-we-go-again"
+  status = 301
+  force = true
+
+# Try out combined site
+[[redirects]]
+  from = "http://talks.derk-jan.com/"
+  to = "https://derk-jan.com/talks/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "http://talks.derk-jan.com/*"
+  to = "https://derk-jan.com/:splat"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    "Cache-Control" = "public, max-age=31536000, s-maxage=31536000"

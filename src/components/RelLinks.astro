@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+
+const url = Astro.url;
+
+const posts = (await getCollection("articles")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const currentPostIndex = posts.findIndex(
+  (post) =>
+    url.pathname.endsWith(post.id) || url.pathname.endsWith(post.id + "/")
+);
+
+console.log(
+  posts.map((p) => p.id),
+  url.pathname
+);
+
+const previousPost =
+  currentPostIndex + 1 === posts.length
+    ? undefined
+    : posts[currentPostIndex + 1];
+const nextPost =
+  currentPostIndex === 0 ? undefined : posts[currentPostIndex - 1];
+---
+
+{
+  currentPostIndex !== -1 && (previousPost || nextPost) && (
+    <nav class="prose prose-lg sm:prose-xl dark:prose-invert prose-zinc max-w-prose mx-auto my-8 pt-8 border-dotted border-t-2">
+      {previousPost && (
+        <p class="text-left">
+          Previous Post:{" "}
+          <a href={`/articles/${previousPost.id}/`}>
+            {previousPost.data.title}
+          </a>
+        </p>
+      )}
+      {nextPost && (
+        <p class="text-right">
+          Next Post:{" "}
+          <a href={`/articles/${nextPost.id}/`}>{nextPost.data.title}</a>
+        </p>
+      )}
+    </nav>
+  )
+}

@@ -1,0 +1,37 @@
+<aside
+  class="prose prose-lg sm:prose-xl dark:prose-invert prose-zinc max-w-prose mx-auto my-8 py-8 border-dotted border-t-2"
+>
+  <div
+    style={{
+      marginTop: 90,
+      marginRight: 0,
+      marginBottom: 40,
+      marginLeft: 0,
+      fontFamily:
+        'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+    }}
+  >
+    <form
+      action="https://buttondown.email/api/emails/embed-subscribe/SleeplessByte"
+      method="post"
+      target="popupwindow"
+      class="embeddable-buttondown-form"
+    >
+      <p class="!mt-2">
+        If you like these articles, and <em>don't want to miss them</em>,
+        receive them <strong>in your inbox</strong>. No spam, unsubscribe at any
+        time.
+      </p>
+      <label for="bd-email">Enter your email</label>
+      <input
+        type="email"
+        name="email"
+        id="bd-email"
+        required
+        autocomplete="email"
+      />
+      <input type="hidden" name="embed" value="1" />
+      <input type="submit" value="Subscribe" class="cursor-pointer" />
+    </form>
+  </div>
+</aside>

@@ -1,8 +1,9 @@
 ---
+layout: /src/layouts/Article.astro
 title: Where have you been?
 date: "2020-10-06T19:54:00Z"
 description: "A short update why I will not write 52 blog posts this year."
-cover: "/articles/2020/10/where-have-you-been/cover.jpg"
+cover: "/src/assets/articles/2020/10/where-have-you-been/cover.jpg"
 ---
 
 I've had a few personal messages through various platforms asking me if I was doing alright, and unfortunately, I was not.

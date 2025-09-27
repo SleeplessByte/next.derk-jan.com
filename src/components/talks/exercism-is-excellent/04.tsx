@@ -161,8 +161,6 @@ const waitingAfterIdle = 5;
 const timeToWork = 10;
 const timeToWeb = 20;
 
-console.log(timeToIdle + waitingAfterIdle + timeToWork + timeToWeb);
-
 const container: Variants = {
   hidden: { opacity: 0 },
 

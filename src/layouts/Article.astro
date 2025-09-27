@@ -1,6 +1,8 @@
 ---
+import Newsletter from "../components/Newsletter.astro";
 import StaticDate from "../components/StaticDate";
 import TimeToRead from "../components/TimeToRead";
+import RelLinks from "../components/RelLinks.astro";
 import BaseLayout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
@@ -55,4 +57,9 @@ const { frontmatter } = Astro.props;
       <slot />
     </article>
   </main>
+
+  <footer>
+    <RelLinks />
+    <Newsletter />
+  </footer>
 </BaseLayout>

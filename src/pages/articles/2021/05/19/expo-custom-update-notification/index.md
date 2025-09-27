@@ -3,7 +3,7 @@ layout: /src/layouts/Article.astro
 title: Expo Updates · Custom update notification
 date: "2021-06-15T01:54:00Z"
 description: "Maintaining a fast start-up time, and in-app message to show your users that a new update is ready whilst using the application."
-cover: "/articles/2021/05/19/expo-custom-update-notification/pexels-markus-winkler-4052195.jpg"
+cover: "/src/assets/articles/2021/05/19/expo-custom-update-notification/pexels-markus-winkler-4052195.jpg"
 ---
 
 As you might now, I am a big [Expo](https://docs.expo.io/) fan.

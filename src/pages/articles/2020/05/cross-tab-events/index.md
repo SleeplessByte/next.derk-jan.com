@@ -3,7 +3,7 @@ layout: /src/layouts/Article.astro
 title: Cross tab events
 date: "2020-05-04T19:43:00Z"
 description: "Running code on other tabs when something happens"
-cover: "/articles/2020/05/cross-tab-events/cover.jpg"
+cover: "/src/assets/articles/2020/05/cross-tab-events/cover.jpg"
 ---
 
 Last week I had an instance where I needed to update all tabs of the same site when a user chose something from a dropdown. Think of the dropdown's current value being a global setting and changing it on one tab, feels like it should change it every where.

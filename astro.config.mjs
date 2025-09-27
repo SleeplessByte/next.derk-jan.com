@@ -15,6 +15,7 @@ import { remarkReadingTime } from "./remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://derk-jan.com",
   markdown: {
     syntaxHighlight: {
       type: "shiki",

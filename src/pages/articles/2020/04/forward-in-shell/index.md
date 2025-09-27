@@ -3,7 +3,7 @@ layout: /src/layouts/Article.astro
 title: Forward arguments in shell
 date: "2020-04-11T10:12:00Z"
 description: "Optionally eating arguments, and passing the rest to the next process."
-cover: "/articles/2020/04/forward-in-shell/cover.jpg"
+cover: "/src/assets/articles/2020/04/forward-in-shell/cover.jpg"
 ---
 
 For one of my CLIs, I needed to remove the first argument from the argument list and forward the rest to a next process. In this example, my shell script is called `cli_process` and given arguments `arg1`, `arg2` and `arg3`, I want to execute `forward_process` with `arg2` and `arg3`.

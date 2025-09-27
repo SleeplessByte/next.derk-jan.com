@@ -3,7 +3,7 @@ layout: /src/layouts/Article.astro
 title: Expo Facebook · Providing Login with Facebook
 date: "2020-05-14T21:06:00Z"
 description: "Step-to-step guide for authentication with facebook"
-cover: "/articles/2020/05/expo-facebook-login/cover.jpg"
+cover: "/src/assets/articles/2020/05/expo-facebook-login/cover.jpg"
 ---
 
 ## Preparation

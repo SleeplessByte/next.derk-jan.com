@@ -1,16 +1,16 @@
 ---
 title: Rails · Right to data portability
-date: '2021-05-19T22:34:00Z'
-description: 'Providing a data download using rubyzip'
-cover: './pexels-nubia-navarro-(nubikini)-385998.jpg'
+date: "2021-05-19T22:34:00Z"
+description: "Providing a data download using rubyzip"
+cover: "/src/assets/articles/right-to-data-portability-and-rails/pexels-nubia-navarro-(nubikini)-385998.jpg"
 ---
 
 If you're a EU citizen, or if you conduct business in the EU, you've probably heard of the General Data Protection Regulation (GDPR).
 Through [delftsolutions.nl](https://delftsolutions.nl), we get a lot of GDPR consultancy related questions.
 You can find many posts on the interwebs about GDPR in general and how to implement it, but I'd like to give you (some) of my solutions.
 
+![Minuture minibus with travel cases on top](<./pexels-nubia-navarro-(nubikini)-385998.jpg>)
 
-![Minuture minibus with travel cases on top](./pexels-nubia-navarro-(nubikini)-385998.jpg)
 ## The right to data portability
 
 I have interpreted the right to data portability to mean that if you collect personal data (which means you _store_ it for longer than the user needs it when using your service, which includes having a user account - technically they don't need the user account when they're not using your service), you **must** provide this data in a portable format.
@@ -28,7 +28,7 @@ Most services I build or maintain that collect data are subject to GDPR.
 In these cases, GDPR requests are usually done manually, which can be time-consuming and frustrating work.
 The first thing I add or I recommend adding is one or several queries to retrieve the data collected, given a user.
 
-> Do you need to share *all* data you've collected?
+> Do you need to share _all_ data you've collected?
 >
 > I've interpreted the first paragraph (point 1) of article 20 as no.
 > Only that data that falls under [Art. 6(1) GDPR: Lawfullness of processing](https://gdpr-info.eu/art-6-gdpr/) point a: data for which consent was given, point b: necessary for the performance of a contract, or [Art. 9(2) GDPR: Processing of special categories of personal data](https://gdpr-info.eu/art-9-gdpr/) point a: data that falls under _special categories_ for which consent was given.

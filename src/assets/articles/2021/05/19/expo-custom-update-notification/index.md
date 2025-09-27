@@ -1,8 +1,8 @@
 ---
 title: Expo Updates · Custom update notification
-date: '2021-06-15T01:54:00Z'
-description: 'Maintaining a fast start-up time, and in-app message to show your users that a new update is ready whilst using the application.'
-cover: '/articles/2021/05/19/expo-custom-update-notification/pexels-markus-winkler-4052195.jpg'
+date: "2021-06-15T01:54:00Z"
+description: "Maintaining a fast start-up time, and in-app message to show your users that a new update is ready whilst using the application."
+cover: "/src/assets/articles/2021/05/19/expo-custom-update-notification/pexels-markus-winkler-4052195.jpg"
 ---
 
 As you might now, I am a big [Expo](https://docs.expo.io/) fan.
@@ -69,7 +69,7 @@ Since you want to exclude web, insert the following:
 
 ```tsx
 {
-  Platform.OS !== 'web' && <OtaUpdater />;
+  Platform.OS !== "web" && <OtaUpdater />;
 }
 ```
 
@@ -84,17 +84,17 @@ Here's the idea:
 Let's start with the code that would check for updates:
 
 ```typescript
-import * as Updates from 'expo-updates';
+import * as Updates from "expo-updates";
 
 async function checkForUpdates(): Promise<true> {
   const update = await Updates.checkForUpdateAsync();
   if (!value.isAvailable) {
-    throw new Error('No updates available');
+    throw new Error("No updates available");
   }
 
   const result = await Updates.fetchUpdateAsync();
   if (!result.isNew) {
-    throw new Error('Fetched update is not new');
+    throw new Error("Fetched update is not new");
   }
 
   return true;
@@ -112,7 +112,7 @@ In this case I'll use [`react-native-use-timestamp`](https://npm.runkit.com/reac
 It also allows you to test it because it relies on [`use-timestamp`](https://npm.runkit.com/use-timestamp/index.ts) which comes with "mocking" out-of-the-box.
 
 ```tsx
-import { useInaccurateTimestamp } from 'react-native-use-timestamp';
+import { useInaccurateTimestamp } from "react-native-use-timestamp";
 
 // How often do we want to render?
 const INTERVAL_RENDER = 1000 * (__DEV__ ? 10 : 60);
@@ -195,7 +195,7 @@ Each time the effect runs because of the timestamp that has changed, it will che
 ## Everything together:
 
 ```tsx
-import { useInaccurateTimestamp } from 'react-native-use-timestamp';
+import { useInaccurateTimestamp } from "react-native-use-timestamp";
 
 // How often do we want to render?
 const INTERVAL_RENDER = 1000 * (__DEV__ ? 10 : 60);
@@ -255,7 +255,7 @@ return (
       visible={updateIsAvailable}
       onDismiss={() => {}}
       action={{
-        label: 'Apply update',
+        label: "Apply update",
         onPress: () => {
           Updates.reloadAsync();
         },
@@ -275,16 +275,16 @@ Because you have access to the new [`Manifest`](https://docs.expo.io/guides/how-
 async function checkForUpdates(): Promise<string> {
   const update = await Updates.checkForUpdateAsync();
   if (!value.isAvailable) {
-    throw new Error('No updates available');
+    throw new Error("No updates available");
   }
 
   const result = await Updates.fetchUpdateAsync();
   if (!result.isNew) {
-    throw new Error('Fetched update is not new');
+    throw new Error("Fetched update is not new");
   }
 
   // Using the "extra": { "update-message": "..." } from app.json
-  return result.manifest.extra['update-message'];
+  return result.manifest.extra["update-message"];
 }
 ```
 
