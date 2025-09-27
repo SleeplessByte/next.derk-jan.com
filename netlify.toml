@@ -27,19 +27,19 @@
 
 # Try out combined site
 [[redirects]]
-  from = "http://talks.derk-jan.com/"
+  from = "https://talks.derk-jan.com/"
   to = "https://www.derk-jan.com/talks/"
   status = 302
   force = true
 
 [[redirects]]
-  from = "http://talks.derk-jan.com/*"
+  from = "https://talks.derk-jan.com/*"
   to = "https://www.derk-jan.com/:splat"
   status = 302
   force = true
 
 [[redirects]]
-  from = "http://talks.derk-jan.com"
+  from = "https://talks.derk-jan.com"
   to = "https://www.derk-jan.com/talks/"
   status = 302
   force = true
