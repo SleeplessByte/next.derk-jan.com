@@ -1,0 +1,141 @@
+---
+import Fallback from "../components/AccessibleCardLink/Fallback.astro";
+import Link from "../components/AccessibleCardLink/Link.astro";
+import ExternalLinks from "../components/ExternalLinks.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="You are subscribed">
+  <main id="content" class="mx-auto w-full max-w-5xl px-5 py-8">
+    <header class="px-4">
+      <h1 class="text-5xl font-bold">Bits and Pieces</h1>
+      <p class="text-xl mt-1">
+        Talks, Articles, and Ramblings by Derk-Jan Karrenbeld
+      </p>
+    </header>
+
+    <section class="px-4 mt-16">
+      <h2 class="text-3xl font-bold">Subscribed!</h2>
+      <p class="text-lg mt-1">
+        You'll receive the newsletter "Code in Bits and Pieces!" in your inbox.
+      </p>
+    </section>
+  </main>
+
+  <aside class="mx-auto w-full max-w-5xl px-5 py-8">
+    <header class="mt-12 px-4">
+      <h2 class="font-bold text-xl">Explore bits and pieces</h2>
+    </header>
+
+    <nav
+      class="space-y-2 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4 mt-4 -mx-1"
+    >
+      <Link
+        className="transition relative p-6 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-sm dark:shadow-md group focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500 dark:focus-within:ring-yellow-500 hover:bg-white dark:hover:bg-zinc-700 active:bg-zinc-50 dark:active:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-200 active:border-zinc-200 dark:active:border-zinc-900 hover:shadow-md dark:hover:shadow-lg active:shadow-none cursor-pointer"
+      >
+        <div>
+          <span
+            class="transition rounded-md inline-flex p-3 bg-zinc-50 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-200 ring-4 ring-transparent dark:ring-zinc-900 dark:group-active:ring-zinc-800"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                d="M13.92 3.845a19.361 19.361 0 01-6.3 1.98C6.765 5.942 5.89 6 5 6a4 4 0 00-.504 7.969 15.974 15.974 0 001.271 3.341c.397.77 1.342 1 2.05.59l.867-.5c.726-.42.94-1.321.588-2.021-.166-.33-.315-.666-.448-1.004 1.8.358 3.511.964 5.096 1.78A17.964 17.964 0 0015 10c0-2.161-.381-4.234-1.08-6.155zM15.243 3.097A19.456 19.456 0 0116.5 10c0 2.431-.445 4.758-1.257 6.904l-.03.077a.75.75 0 001.401.537 20.902 20.902 0 001.312-5.745 1.999 1.999 0 000-3.545 20.902 20.902 0 00-1.312-5.745.75.75 0 00-1.4.537l.029.077z"
+              ></path>
+            </svg>
+          </span>
+        </div>
+
+        <div class="mt-8">
+          <h2 class="text-lg font-medium">
+            <a class="focus:outline-none" href="/talks">
+              <Fallback className="absolute inset-0" />
+              Talks
+            </a>{" "}
+          </h2>
+          <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+            Read along or revisit the slides of the talks I've given.
+          </p>
+        </div>
+
+        <span
+          class="pointer-events-none absolute top-6 right-6 text-zinc-300 group-hover:text-zinc-400"
+          aria-hidden="true"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+        </span>
+      </Link>
+
+      <Link
+        className="transition relative p-6 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-sm dark:shadow-md group focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500 dark:focus-within:ring-yellow-500 hover:bg-white dark:hover:bg-zinc-700 active:bg-zinc-50 dark:active:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-200 active:border-zinc-200 dark:active:border-zinc-900 hover:shadow-md dark:hover:shadow-lg active:shadow-none cursor-pointer"
+      >
+        <div>
+          <span
+            class="transition rounded-md inline-flex p-3 bg-zinc-50 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-200 ring-4 ring-transparent dark:ring-zinc-900 dark:group-active:ring-zinc-800"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5zm2.25 8.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 3a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </span>
+        </div>
+
+        <div class="mt-8">
+          <h2 class="text-lg font-medium">
+            <a class="focus:outline-none" href="/articles">
+              <Fallback className="absolute inset-0" />
+              Articles
+            </a>{" "}
+          </h2>
+          <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+            Read articles or posts I've written about various subjects.
+          </p>
+        </div>
+
+        <span
+          class="pointer-events-none absolute top-6 right-6 text-zinc-300 group-hover:text-zinc-400"
+          aria-hidden="true"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+        </span>
+      </Link>
+    </nav>
+
+    <ExternalLinks />
+  </aside>
+</Layout>

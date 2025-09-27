@@ -1,0 +1,148 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import StaticDate from "../../components/StaticDate";
+import { ExternalLink } from "../../components/ExternalLink";
+---
+
+<Layout title="Talks">
+  <main id="content" class="mx-auto w-full max-w-5xl px-5 py-8">
+    <header class="px-4">
+      <h1 class="text-5xl font-bold">Talks in Bits and Pieces</h1>
+      <p class="text-xl mt-1">Talks by Derk-Jan Karrenbeld</p>
+    </header>
+
+    <section class="px-4 mt-12">
+      <a href="/articles">Looking for articles instead?</a>
+    </section>
+
+    <ol class="mt-12 space-y-6" role="list">
+      <li>
+        <article
+          class="transition p-4 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-yellow-500 max-w-2xl rounded-md"
+        >
+          <header>
+            <h2>
+              <a
+                href="/talks/exercism-is-excellent"
+                class="text-3xl font-semibold no-underline focus:outline-none"
+                aria-describedby="exercism-is-excellent-description"
+                data-astro-prefetch="load"
+              >
+                Talk: Exercis[em] is Excellent
+              </a>
+            </h2>
+
+            <span class="text-zinc-600 dark:text-zinc-400">
+              <StaticDate date="2023-03-21" aria-label="Given on" />
+            </span>
+          </header>
+          <p id="exercism-is-excellent-description" class="mt-2 text-xl">
+            Lightning talk about the benefits of exercising on Exercism, a
+            platform for developers to achieve fluency in a (new) programming
+            language.
+          </p>
+        </article>
+      </li>
+
+      <li>
+        <article
+          class="transition p-4 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-yellow-500 max-w-2xl rounded-md"
+        >
+          <header>
+            <h2>
+              <a
+                href="/talks/practically-accessible"
+                class="text-3xl font-semibold no-underline focus:outline-none"
+                aria-describedby="practically-accessible-description"
+                data-astro-prefetch="load"
+              >
+                Talk: Practically Accessible
+              </a>
+            </h2>
+            <span class="text-zinc-600 dark:text-zinc-400">
+              <StaticDate date="2022-12-14" aria-label="Given on" />
+            </span>
+          </header>
+          <p id="practically-accessible-description" class="mt-2 text-xl">
+            Getting started with accessibility in practice. A talk given at{" "}
+            A11Y.Lowlands, an event by the Lowlands Community.
+          </p>
+        </article>
+      </li>
+
+      <li>
+        <article
+          class="transition p-4 opacity-50 hover:opacity-95 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-yellow-500 max-w-2xl rounded-md"
+        >
+          <header>
+            <h2>
+              <span
+                class="text-3xl font-semibold no-underline flex items-baseline"
+              >
+                <span class="align-middle">
+                  Talk: Lessons from Production
+                </span>
+              </span>
+            </h2>
+            <span class="text-zinc-600 dark:text-zinc-400">
+              <StaticDate date="2020-01-28" aria-label="Given on" />
+            </span>
+          </header>
+          <p id="lessons-from-production-description" class="mt-2 text-xl">
+            Some API design guidelines for building scalable, predictable and
+            sane interfaces, extracted from API’s with over 1 million req/hour.
+            A talk given at Sardines.rb, the Lisbon Ruby meetup group.
+          </p>
+        </article>
+      </li>
+      <li>
+        <article
+          class="transition p-4 opacity-50 hover:opacity-95 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-yellow-500 max-w-2xl rounded-md"
+        >
+          <header>
+            <h2>
+              <span
+                class="text-3xl font-semibold no-underline flex items-baseline"
+              >
+                <span class="align-middle"> Talk: Use Standards </span>
+              </span>
+            </h2>
+            <span class="text-zinc-600 dark:text-zinc-400">
+              <StaticDate date="2019-10-30" aria-label="Given on" />
+            </span>
+          </header>
+          <p id="use-standards-description" class="mt-2 text-xl">
+            A talk on using standards: (don't) be smart. Given at{" "}
+            Rotterdam.rb, The Rotterdam Ruby meetup group.
+          </p>
+        </article>
+      </li>
+      <li>
+        <article
+          class="transition p-4 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-yellow-500 max-w-2xl rounded-md"
+        >
+          <header>
+            <h2>
+              <ExternalLink
+                href="https://presenting-ujc.derk-jan.com/"
+                className="text-3xl font-semibold no-underline focus:outline-none flex items-baseline"
+                aria-describedby="presenting-ujc-description"
+              >
+                Slides: Unobtrusive JavaScript Components
+              </ExternalLink>
+            </h2>
+
+            <span class="text-zinc-600 dark:text-zinc-400">
+              <StaticDate date="2019-09-17" aria-label="Given on" />
+            </span>
+          </header>
+          <p id="presenting-ujc-description" class="mt-2 text-xl">
+            Creating JavaScript components for Rails and Rack applications that
+            are portable, reusable &amp; testable. A talk given at{" "}
+            Amsterdam.rb, The Amsterdam Ruby meetup group.
+          </p>
+        </article>
+      </li>
+    </ol>
+  </main>
+</Layout>

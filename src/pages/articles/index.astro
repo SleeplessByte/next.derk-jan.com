@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import StaticDate from "../../components/StaticDate";
 
@@ -30,7 +30,7 @@ const articles = (await getCollection("articles")).sort(
                     href={`/articles/${article.id}`}
                     class="text-3xl font-semibold no-underline focus:outline-none"
                     aria-describedby={`${article.id}-description`}
-                    prefetch="intent"
+                    data-astro-prefetch
                   >
                     {article.data.title}
                   </a>

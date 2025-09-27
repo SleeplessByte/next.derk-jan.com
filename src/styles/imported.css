@@ -125,7 +125,7 @@
   }
 
   .slides {
-    @apply min-h-screen flex flex-col;
+    @apply min-h-screen flex flex-wrap flex-col place-content-center;
   }
 
   .slides > section {

@@ -1,0 +1,67 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Layout from "../../layouts/Layout.astro";
+
+const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<Layout
+  title={title
+    ? `${title} · Exercism is Excellent: Talk, on Code in Bits and Pieces`
+    : "Exercism is Excellent: Talk, on Code in Bits and Pieces"}
+>
+  <header class="mx-auto w-full max-w-5xl px-5 py-8 absolute top-0 z-10">
+    <a
+      href="#content"
+      class="transition sr-only focus:not-sr-only rounded-md focus:fixed focus:top-4 focus:left-4 focus:dark:bg-zinc-900 focus:bg-zinc-100 focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-pink-500 dark:focus:ring-yellow-500"
+    >
+      <span class="block p-2">Skip to main content</span>
+    </a>
+    {
+      currentPath === "/talks/exercism-is-excellent" ? (
+        <nav
+          class={`transition focus-within:opacity-100 hover:opacity-100 ${
+            currentPath !== "/talks/exercism-is-excellent" ? "opacity-20" : ""
+          }`}
+        >
+          <a
+            href="/talks"
+            class="transition group inline-flex space-x-1 items-center focus:outline-none focus:ring-2 focus:ring-pink-500 dark:focus:ring-yellow-500 rounded-md p-2 -mx-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 motion-safe:group-hover:animate-bouncel motion-safe:group-focus:animate-bouncel"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span>Back to all talks</span>
+          </a>
+        </nav>
+      ) : null
+    }
+  </header>
+
+  <h1 class="sr-only">Talk: Exercise and Exercism are Excellent</h1>
+
+  <p class="sr-only">
+    This talk consists of multiple slides, each contained within its own
+    section. Each section has a link at the end to the next section.
+  </p>
+
+  <main
+    id="content"
+    class="prose-lg sm:prose-xl md:prose-2xl min-h-screen slides"
+  >
+    <slot />
+  </main>
+</Layout>
+
+<ClientRouter />

@@ -1,0 +1,21 @@
+---
+import { AutoSlideFooter } from "./Slide/AutoSlideFooter";
+
+interface Props {
+  next?: string;
+  nextLabel: string;
+  nextCount: number;
+  nextAnchor?: string;
+  duration: number;
+}
+const { next, nextLabel, nextCount, nextAnchor, duration } = Astro.props;
+---
+
+<AutoSlideFooter
+  next={next}
+  nextLabel={nextLabel}
+  nextCount={nextCount}
+  nextAnchor={nextAnchor}
+  duration={duration}
+  client:load
+/>

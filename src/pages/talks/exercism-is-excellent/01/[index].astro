@@ -1,0 +1,30 @@
+---
+import SlidesLayout from "../../../../layouts/talks/exercism-is-excellent.astro";
+import Page from "../../../../components/talks/exercism-is-excellent/01";
+
+const astroUrl = Astro.url;
+const astroParams = Astro.params;
+
+const searchParams = new URLSearchParams();
+Object.entries(astroParams).forEach(([key, value]) => {
+  if (value) {
+    searchParams.set(key, value);
+  }
+});
+
+const url = new URL(astroUrl.toString() + "?" + searchParams.toString());
+
+export function getStaticPaths() {
+  return [
+    { params: { index: "0" } },
+    { params: { index: "1" } },
+    { params: { index: "2" } },
+    { params: { index: "3" } },
+    { params: { index: "4" } },
+  ];
+}
+---
+
+<SlidesLayout title="Slide 1: headlines">
+  <Page client:idle currentUrl={url} />
+</SlidesLayout>

@@ -1,0 +1,42 @@
+---
+import Layout from "../../../layouts/talks/exercism-is-excellent.astro";
+---
+
+<Layout title="Front page & Slide">
+  <h2 class="sr-only">Front page and slide of the talk</h2>
+  <section class="slide">
+    <header class="-mt-12">
+      <h3 class="font-semibold text-center" id="title-slide-1">
+        Exercis[em] is Excellent
+      </h3>
+      <p
+        class="text-center max-w-md sm:max-w-lg md:max-w-xl mx-auto leading-7 sm:leading-7 md:leading-8"
+      >
+        Prefer <em class="not-italic font-semibold">reduced motion</em>{" "}
+        or a <em class="not-italic font-semibold">light background</em>? Go to <a
+          href="https://talks.derk-jan.com">talks.derk-jan.com</a
+        > to follow along on your device.
+      </p>
+    </header>
+    <footer class="absolute left-0 bottom-0 w-full flex items-center">
+      <a
+        href="/talks/exercism-is-excellent/01"
+        class="mx-auto prose-lg p-4 transition rounded-md focus:outline-none focus:ring-2 focus:ring-current mb-2 group"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 motion-safe:animate-pulse relative group-hover:scale-125 group-active:scale-100 transition"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm6.39-2.908a.75.75 0 01.766.027l3.5 2.25a.75.75 0 010 1.262l-3.5 2.25A.75.75 0 018 12.25v-4.5a.75.75 0 01.39-.658z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span class="sr-only">Goto slide 1: introduction</span>
+      </a>
+    </footer>
+  </section>
+</Layout>
