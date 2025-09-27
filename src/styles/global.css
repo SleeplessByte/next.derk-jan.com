@@ -93,5 +93,5 @@
 }
 
 .article img {
-  @apply rounded-xl shadow-md dark:shadow-2xl;
+  @apply rounded-xl shadow-md dark:shadow-2xl bg-white dark:bg-zinc-950;
 }
