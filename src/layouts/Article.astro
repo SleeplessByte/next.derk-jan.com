@@ -1,0 +1,58 @@
+---
+import StaticDate from "../components/StaticDate";
+import TimeToRead from "../components/TimeToRead";
+import BaseLayout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <div class="p-6">
+    <header class="prose sm:prose-xl mx-auto w-full max-w-prose px-0 py-8">
+      <a
+        href="#content"
+        class="transition sr-only focus:not-sr-only rounded-md focus:fixed focus:top-4 focus:left-4 focus:dark:bg-zinc-900 focus:bg-zinc-100 focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-pink-500 dark:focus:ring-yellow-500"
+      >
+        <span class="block p-2">Skip to main content</span>
+      </a>
+      <nav>
+        <a
+          href="/articles"
+          class="transition group inline-flex space-x-1 items-center focus:outline-none focus:ring-2 focus:ring-pink-500 dark:focus:ring-yellow-500 rounded-md p-2 -mx-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 motion-safe:group-hover:animate-bouncel motion-safe:group-focus:animate-bouncel"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span>Back to all articles</span>
+        </a>
+      </nav>
+    </header>
+  </div>
+
+  <main class="p-6" id="content">
+    <article
+      class="prose prose-lg sm:prose-xl dark:prose-invert prose-zinc max-w-prose mx-auto article"
+    >
+      <header>
+        <h1 class="font-extrabold text-5xl">{frontmatter.title}</h1>
+        <p style={{ marginTop: -24 }} class="font-bold">
+          <StaticDate date={frontmatter.date} aria-label="Published on" /> •{
+            " "
+          }
+          <TimeToRead minutes={frontmatter.minutesRead} />
+        </p>
+      </header>
+
+      <slot />
+    </article>
+  </main>
+</BaseLayout>

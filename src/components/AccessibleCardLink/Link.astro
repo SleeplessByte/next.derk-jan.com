@@ -1,0 +1,9 @@
+---
+import { AccessibleCardLink } from "./Component.tsx";
+
+const { className } = Astro.props;
+---
+
+<AccessibleCardLink client:idle className={className}>
+  <slot />
+</AccessibleCardLink>
