@@ -44,11 +44,6 @@
   status = 302
   force = true
 
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server"
-  status = 200
-
 [[headers]]
   for = "/_astro/*"
   [headers.values]
