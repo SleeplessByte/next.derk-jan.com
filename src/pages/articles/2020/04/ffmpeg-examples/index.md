@@ -3,7 +3,7 @@ layout: /src/layouts/Article.astro
 title: FFMPEG examples
 date: "2020-04-15T22:37:00Z"
 description: "Transcoding or probing for the durations with examples and explanations."
-cover: "/src/assets/articles/2020/04/ffmpeg-examples/cover.jpg"
+cover: "../../../../../../assets/articles/ffmpeg-examples/cover.jpg"
 ---
 
 For [Sounders Music][web-sounders] I had to write a few new file processors. In their eco-system, audio tracks are uploaded and transcoded to a format that is playable in their front-ends, such as their apps.

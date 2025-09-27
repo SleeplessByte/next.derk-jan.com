@@ -3,14 +3,14 @@ layout: /src/layouts/Article.astro
 title: Rails · Right to data portability
 date: "2021-05-19T22:34:00Z"
 description: "Providing a data download using rubyzip"
-cover: "/src/assets/articles/2021/05/19/right-to-data-portability-and-rails/pexels-nubia-navarro-(nubikini)-385998.jpg"
+cover: "../../../../../../assets/articles/right-to-data-portability-and-rails/cover.jpg"
 ---
 
 If you're a EU citizen, or if you conduct business in the EU, you've probably heard of the General Data Protection Regulation (GDPR).
 Through [delftsolutions.nl](https://delftsolutions.nl), we get a lot of GDPR consultancy related questions.
 You can find many posts on the interwebs about GDPR in general and how to implement it, but I'd like to give you (some) of my solutions.
 
-![Minuture minibus with travel cases on top](</src/assets/articles/2021/05/19/right-to-data-portability-and-rails/pexels-nubia-navarro-(nubikini)-385998.jpg>)
+![Minuture minibus with travel cases on top](../../../../../../assets/articles/right-to-data-portability-and-rails/cover.jpg)
 
 ## The right to data portability
 

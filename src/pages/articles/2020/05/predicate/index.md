@@ -3,7 +3,7 @@ layout: /src/layouts/Article.astro
 title: Predicate (Programming logic)
 date: "2020-05-07T02:47:00Z"
 description: "A few words on boolean-valued functions"
-cover: "/src/assets/articles/2020/05/predicate/cover.jpg"
+cover: "../../../../../../assets/articles/predicate/cover.jpg"
 ---
 
 In university I had to study [Prolog][about-prolog] when using [Goal][about-goal], in order to create an agent (artificial intelligence) to play _and win_ capture the flag in Unreal Tournament. This article is not about Prolog, or Goal, but it helps me to mentally model what _predicates_ are.

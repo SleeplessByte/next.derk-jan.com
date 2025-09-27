@@ -3,12 +3,12 @@ layout: /src/layouts/Article.astro
 title: Where have you been?
 date: "2020-10-06T19:54:00Z"
 description: "A short update why I will not write 52 blog posts this year."
-cover: "/src/assets/articles/2020/10/where-have-you-been/cover.jpg"
+cover: "../../../../../assets/articles/where-have-you-been/cover.jpg"
 ---
 
 I've had a few personal messages through various platforms asking me if I was doing alright, and unfortunately, I was not.
 
-![Stuffed animal bear with a COVID-19 mask, laying on the ground](/src/assets/articles/2020/10/where-have-you-been/cover.jpg)
+![Stuffed animal bear with a COVID-19 mask, laying on the ground](../../../../../assets/articles/where-have-you-been/cover.jpg)
 
 ## Global Pandemic and bills
 

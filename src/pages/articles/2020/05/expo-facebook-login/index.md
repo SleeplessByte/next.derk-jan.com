@@ -3,7 +3,7 @@ layout: /src/layouts/Article.astro
 title: Expo Facebook · Providing Login with Facebook
 date: "2020-05-14T21:06:00Z"
 description: "Step-to-step guide for authentication with facebook"
-cover: "/src/assets/articles/2020/05/expo-facebook-login/cover.jpg"
+cover: "../../../../../assets/articles/expo-facebook-login/cover.jpg"
 ---
 
 ## Preparation
@@ -80,19 +80,19 @@ The `AuthRequestConfig` is the Facebook OAuth configuration, and needs our atten
 
 Browse to [developers.facebook.com][developers.facebook.com] and create a new application.
 
-![Interface on developers.facebook.com, showing the My Apps menu with the Create App option](/src/assets/articles/2020/05/expo-facebook-login/facebook1.PNG)
+![Interface on developers.facebook.com, showing the My Apps menu with the Create App option](../../../../../assets/articles/expo-facebook-login/facebook1.PNG)
 
 On the popup, pick _For Everything Else_, unless you're making a mobile game that's **not** an Instant Game or Canvas Game.
 
-![The popup that appears when creating a new app, depicting three options with the question "How are you using your app?". The third option is "For Everything Else".](/src/assets/articles/2020/05/expo-facebook-login/facebook2.PNG)
+![The popup that appears when creating a new app, depicting three options with the question "How are you using your app?". The third option is "For Everything Else".](../../../../../assets/articles/expo-facebook-login/facebook2.PNG)
 
 Finally, fill in the **App Display Name** and **App Contact Email**:
 
-![The "For Everything Else" form with the title Create an App ID](/src/assets/articles/2020/05/expo-facebook-login/facebook3.PNG)
+![The "For Everything Else" form with the title Create an App ID](../../../../../assets/articles/expo-facebook-login/facebook3.PNG)
 
 When all proceeds as planned, you're greeted by the following screen, with in the top left your **App Display Name** and next to that the actual **APP ID** that you'll need.
 
-![Final state of the App creation process, including the APP ID.](/src/assets/articles/2020/05/expo-facebook-login/facebook4.PNG)
+![Final state of the App creation process, including the APP ID.](../../../../../assets/articles/expo-facebook-login/facebook4.PNG)
 
 ## Update the configuration
 
@@ -227,7 +227,7 @@ If you try to login now, the original error disappears, but Facebook will still 
 
 On [developers.facebook.com][developers.facebook.com], go to your app and press the `Facebook Login` button. Now do **not** press any of the options, but instead on the left side in the menu press **Settings**:
 
-![Indicating the settings for Facebook Login on the developers.facebook.com website.](/src/assets/articles/2020/05/expo-facebook-login/facebook5.PNG)
+![Indicating the settings for Facebook Login on the developers.facebook.com website.](../../../../../assets/articles/expo-facebook-login/facebook5.PNG)
 
 When you press it, in the top box, find **Valid OAuth Redirect URIs** and enter the Redirection URI. It will be `https://auth.expo.io/@username/slug` -- but if you're unsure, you can add the following to `App.tsx` and copy it from your console:
 
@@ -248,7 +248,7 @@ In my case it's `https://auth.expo.io/@derk-jan/facebook-login`
 
 If you run `yarn start` again and open the app and press the Login button, you should now see a Facebook Login prompt. Pressing continue logs you in _but shows another error_:
 
-![Error page on the phone showing "Something went wrong trying to finish signing in. Please close this creen to go back to the app."](/src/assets/articles/2020/05/expo-facebook-login/expo-error.jpg)
+![Error page on the phone showing "Something went wrong trying to finish signing in. Please close this creen to go back to the app."](../../../../../assets/articles/expo-facebook-login/expo-error.jpg)
 
 We'll fix this in a minute! Let's first test a successful flow on the web.
 
@@ -288,7 +288,7 @@ export default function App() {
 
 All I've changed is pass in the `useProxy` value here too. Now launch the login prompt again and rejoice:
 
-![Screen prompting the user in a browser to sign into another service.](/src/assets/articles/2020/05/expo-facebook-login/expo-confirm.jpg)
+![Screen prompting the user in a browser to sign into another service.](../../../../../assets/articles/expo-facebook-login/expo-confirm.jpg)
 
 Press `Yes` to receive the same response shape, with similar data as on the web:
 
@@ -336,7 +336,7 @@ https://graph.facebook.com/v7.0/oauth/access_token
 
 Go back to [developers.facebook.com][developers.facebook.com] once more, and on the left side, in the menu, press the Settings item > Basic.
 
-![](/src/assets/articles/2020/05/expo-facebook-login/facebook7.PNG)
+![](../../../../../assets/articles/expo-facebook-login/facebook7.PNG)
 
 Okay great. Let's assume the value is `26d63d5f1af0470e88da15e88c128ee0`. Replace the `{app-secret}` template variable:
 

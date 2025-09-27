@@ -3,7 +3,7 @@ layout: /src/layouts/Article.astro
 title: Expo Updates · Custom update notification
 date: "2021-06-15T01:54:00Z"
 description: "Maintaining a fast start-up time, and in-app message to show your users that a new update is ready whilst using the application."
-cover: "/src/assets/articles/2021/05/19/expo-custom-update-notification/pexels-markus-winkler-4052195.jpg"
+cover: "../../../../../../assets/articles/expo-custom-update-notification/cover.jpg"
 ---
 
 As you might now, I am a big [Expo](https://docs.expo.io/) fan.
@@ -13,7 +13,7 @@ In this article I'd like to show you how I use [`expo-updates`](https://docs.exp
 
 > The `Updates` API from `expo` allows you to programmatically control and respond to over-the-air updates to your app.
 
-![Typewriter with a paper sticking out with a single word: "Update"](/src/assets/articles/2021/05/19/expo-custom-update-notification/pexels-markus-winkler-4052195.jpg)
+![Typewriter with a paper sticking out with a single word: "Update"](../../../../../../assets/articles/expo-custom-update-notification/cover.jpg)
 
 ## Configuration
 

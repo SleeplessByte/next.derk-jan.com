@@ -3,12 +3,12 @@ layout: /src/layouts/Article.astro
 title: Rails UJS · Custom Confirm
 date: "2020-10-06T22:34:00Z"
 description: "Using a custom confirmation dialog, when using Rails unobtrusive JavaScript driver."
-cover: "/src/assets/articles/2020/10/rails-ujs-custom-confirm/cover.jpg"
+cover: "../../../../../assets/articles/rails-ujs-custom-confirm/cover.jpg"
 ---
 
 In Rails, the [`@rails/ujs`][npm-rails-ujs] driver can be used to add interactions to a website, without needing to mix the JavaScript with the HTML. It's progressively enhancing a site, and will not do anything special if JavaScript is turned off. In particular, this driver allows to [Show a Confirmation][rails-guides-confirmations] before actually executing whatever the click / touch / interaction was supposed to do.
 
-![Thumbs up with a gradient background](/src/assets/articles/2020/10/rails-ujs-custom-confirm/cover.jpg)
+![Thumbs up with a gradient background](../../../../../assets/articles/rails-ujs-custom-confirm/cover.jpg)
 
 From the documentation, the following Ruby or ERB (Embedded Ruby) code...
 
