@@ -1,0 +1,27 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import { Code } from "astro/components";
+import ShellSlide from "../../../../components/Slide/ShellSlide.astro";
+---
+
+<SlidesLayout title="Slide 25.4: run format-patch">
+  <ShellSlide
+    next-href="/talks/embrace-the-patch/25/5-send"
+    next-label="Go to slide 25.5: send email"
+  >
+    <Code
+      slot="shell"
+      lang="shell"
+      code={`$ git format-patch 353ff4..3d3c5d`.trim()}
+    />
+
+    <Code
+      slot="result"
+      lang="shell"
+      code={`
+0001-Fix-hello-world-output.patch
+0002-Freeze-those-strings.patch
+    `.trim()}
+    />
+  </ShellSlide>
+</SlidesLayout>

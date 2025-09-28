@@ -1,0 +1,107 @@
+---
+type Props = {
+  class?: string;
+  "single:transition-name"?: string;
+  "before:disable-transition"?: boolean;
+  "before:hidden"?: boolean;
+  "after:disable-transition"?: boolean;
+  "after:hidden"?: boolean;
+  "slide:embedded"?: boolean;
+} & (
+  | { "next-href"?: undefined; "next-label"?: undefined }
+  | {
+      "next-href": string;
+      "next-label": string;
+    }
+);
+
+const {
+  class: className = "",
+  "single:transition-name": singleTransitionName = "single",
+  "slide:embedded": slideIsEmbedded = false,
+  "before:disable-transition": disableBeforeTransition = false,
+  "after:disable-transition": disableAfterTransition = false,
+  "before:hidden": beforeHidden = false,
+  "after:hidden": afterHidden = false,
+  "next-href": nextHref,
+  "next-label": nextLabel,
+} = Astro.props;
+---
+
+<section
+  class={`${slideIsEmbedded ? "" : "slide"} ${className} flex-col flex-wrap place-content-center`}
+  transition:name={slideIsEmbedded ? undefined : "slide"}
+  style={slideIsEmbedded ? "zoom: 0.5" : ""}
+>
+  <div
+    transition:name="code"
+    class="!m-0 px-12 py-6 mx-12 self-center justify-self-center grid grid-cols-3 gap-12"
+    style="grid-template-columns: 1fr auto 1fr;"
+  >
+    <div
+      transition:name={disableBeforeTransition
+        ? undefined
+        : singleTransitionName !== "before"
+          ? "before"
+          : undefined}
+      class={`self-center ${beforeHidden ? "w-0" : ""}`}
+    >
+      <slot name="before" />
+    </div>
+
+    <slot name="single" transition:name={singleTransitionName}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6 self-center justify-self-center"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"></path>
+      </svg>
+    </slot>
+
+    <div
+      transition:name={disableAfterTransition
+        ? undefined
+        : singleTransitionName !== "after"
+          ? "after"
+          : undefined}
+      class={`self-center ${afterHidden ? "w-0" : ""}`}
+    >
+      <slot name="after" />
+    </div>
+  </div>
+
+  {
+    nextHref ? (
+      <footer
+        class="absolute right-0 top-0 bottom-0 flex items-center"
+        transition:name="next"
+      >
+        <a rel="next" href={nextHref} class="group">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            role="img"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+            />
+            <title>{nextLabel}</title>
+          </svg>
+        </a>
+      </footer>
+    ) : null
+  }
+</section>

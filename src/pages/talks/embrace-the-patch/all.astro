@@ -1,0 +1,102 @@
+---
+import { Image } from "astro:assets";
+import SlidesLayout from "../../../layouts/talks/embrace-the-patch.astro";
+
+import colossusFrontal from "../../../assets/talks/embrace-the-patch/colussus_frontal.jpg";
+import colossusPaperTape from "../../../assets/talks/embrace-the-patch/colossus_paper_tape.jpg";
+import paperExample from "../../../assets/talks/embrace-the-patch/papertape-wikipedia-example.svg.png";
+import harvardMark from "../../../assets/talks/embrace-the-patch/harvard_mark_I_program_tape.agr.jpg";
+import paperPatch from "../../../assets/talks/embrace-the-patch/patch.jpg";
+---
+
+<SlidesLayout title="Slide 1: The Colossus Mark 2">
+  <div class="space-y-12 max-w-prose prose sm:prose-xl p-6">
+    <figure>
+      <blockquote
+        cite="https://en.wikipedia.org/wiki/Colossus_computer#/media/File:Frontal_view_of_the_reconstructed_Colossus_at_The_National_Museum_of_Computing,_Bletchley_Park.jpg"
+      >
+        <Image
+          src={colossusFrontal}
+          width={colossusFrontal.width}
+          height={colossusFrontal.height}
+          alt=""
+          class="max-w-full w-full rounded-lg shadow-2xl"
+        />
+      </blockquote>
+      <figcaption class="text-zinc-700 dark:text-zinc-300 !-mt-6">
+        An early computer, The Colossus Mark 2, frontal view. By <cite
+          >Ted Coles</cite
+        >.
+      </figcaption>
+    </figure>
+    <figure>
+      <blockquote
+        cite="https://en.wikipedia.org/wiki/Punched_tape#/media/File:Colossus_Paper_Tape.JPG"
+      >
+        <Image
+          src={colossusPaperTape}
+          width={colossusPaperTape.width}
+          height={colossusPaperTape.height}
+          alt=""
+          class="max-w-full w-full rounded-lg shadow-2xl"
+        />
+      </blockquote>
+      <figcaption class="text-zinc-700 dark:text-zinc-300 !-mt-6">
+        The Colossus Mark 2 paper tape drive mechanism. By <cite>Ibonzer</cite>.
+      </figcaption>
+    </figure>
+    <figure>
+      <blockquote
+        cite="https://en.wikipedia.org/wiki/Punched_tape#/media/File:Papertape-Wikipedia-example-dark1.svg"
+      >
+        <Image
+          src={paperExample}
+          width={paperExample.width}
+          height={paperExample.height}
+          alt=""
+          class="max-w-full w-full rounded-lg shadow-2xl bg-white"
+        />
+      </blockquote>
+      <figcaption class="text-zinc-700 dark:text-zinc-300 !-mt-6">
+        The word "Wikipedia", and a CR/LF as 7-bit ASCII, without a parity bit.
+        By <cite>Vanessa Ezekowitz</cite>.
+      </figcaption>
+    </figure>
+    <figure>
+      <blockquote
+        cite="https://en.wikipedia.org/wiki/Punched_tape#/media/File:Harvard_Mark_I_program_tape.agr.jpg"
+      >
+        <Image
+          src={harvardMark}
+          width={harvardMark.width}
+          height={harvardMark.height}
+          alt=""
+          class="max-w-full w-full rounded-lg shadow-2xl"
+        />
+      </blockquote>
+      <figcaption class="text-zinc-700 dark:text-zinc-300 !-mt-6">
+        A 24-channel program tape for the Harvard Mark I. By <cite
+          >Arnold Reinhold</cite
+        >.
+      </figcaption>
+    </figure>
+    <figure>
+      <blockquote
+        cite="https://www.bram.us/2017/01/24/why-a-software-patch-is-called-a-patch/"
+      >
+        <Image
+          src={paperPatch}
+          width={paperPatch.width}
+          height={paperPatch.height}
+          alt=""
+          class="max-w-full w-full rounded-lg shadow-2xl"
+        />
+      </blockquote>
+      <figcaption class="text-zinc-700 dark:text-zinc-300 !-mt-6">
+        Patches on punched tape. Sourced from <cite
+          >www.bram.us, courtesy of the Smithsonian Archives Center</cite
+        >.
+      </figcaption>
+    </figure>
+  </div>
+</SlidesLayout>

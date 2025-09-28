@@ -1,0 +1,17 @@
+---
+import SlidesLayout from "../../../layouts/talks/embrace-the-patch.astro";
+
+import colossusFrontal from "../../../assets/talks/embrace-the-patch/colussus_frontal.jpg";
+import ImageSlide from "../../../components/Slide/ImageSlide.astro";
+---
+
+<SlidesLayout title="Slide 1: The Colossus Mark 2">
+  <ImageSlide
+    src={colossusFrontal}
+    cite-url="https://en.wikipedia.org/wiki/Colossus_computer#/media/File:Frontal_view_of_the_reconstructed_Colossus_at_The_National_Museum_of_Computing,_Bletchley_Park.jpg"
+    caption="An early computer, The Colossus Mark 2, frontal view."
+    author="Ted Coles"
+    next-href="/talks/embrace-the-patch/02"
+    next-label="Go to slide 2: The Colossus Mark 2, paper tape drive mechanism"
+  />
+</SlidesLayout>

@@ -1,0 +1,50 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+import { Code } from "astro:components";
+
+import { transformerMetaHighlight } from "@shikijs/transformers";
+
+const transformers = [
+  transformerMetaHighlight({
+    className:
+      "highlighted rounded-sm ring-2 ring-offset-2 ring-offset-pink-500 ring-black/50",
+  }),
+];
+---
+
+<SlidesLayout title="Slide 9.2: explaining diff">
+  <CodeSlide
+    next-href="/talks/embrace-the-patch/09/3-compare-combined"
+    next-label="Go to slide 9.3: explaining diff"
+    before:disable-transition
+  >
+    <Code
+      slot="before"
+      lang="ruby"
+      code={`
+class HelloWorld
+  def self.hello
+    "Hello, World!"
+  end
+end
+`.trimStart()}
+    />
+
+    <Code
+      slot="after"
+      lang="ruby"
+      meta="{1}"
+      transformers={transformers}
+      code={`
+# frozen_string_literal: true
+
+class HelloWorld
+  def self.hello
+    "Hello, World!"
+  end
+end
+`.trim()}
+    />
+  </CodeSlide>
+</SlidesLayout>

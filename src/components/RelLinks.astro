@@ -12,11 +12,6 @@ const currentPostIndex = posts.findIndex(
     url.pathname.endsWith(post.id) || url.pathname.endsWith(post.id + "/")
 );
 
-console.log(
-  posts.map((p) => p.id),
-  url.pathname
-);
-
 const previousPost =
   currentPostIndex + 1 === posts.length
     ? undefined

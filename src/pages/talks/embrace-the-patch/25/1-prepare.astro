@@ -1,0 +1,41 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+import { Code } from "astro/components";
+---
+
+<SlidesLayout title="Slide 25.1: preparing email patch">
+  <CodeSlide
+    next-href="/talks/embrace-the-patch/25/2-prepare"
+    next-label="Go to slide 25.2: preparing email patch"
+    before:hidden
+    after:hidden
+    single:transition-name="shell"
+  >
+    <Code
+      class="!max-h-full !my-0"
+      style="zoom: 0.8"
+      slot="single"
+      lang="log"
+      code={`
+commit 353ff4fd1a44c07d895659e800f6f42449ca3694 (HEAD -> talk)
+Author: Derk-Jan Karrenbeld <derk-jan@delftsolutions.nl>
+Date:   Sun Sep 28 20:35:26 2025 +0200
+
+    Freeze those strings
+
+commit 1c397a1ed3d6b6368632e2085d0b7bdf749ae73a
+Author: Derk-Jan Karrenbeld <derk-jan@delftsolutions.nl>
+Date:   Sun Sep 28 20:35:09 2025 +0200
+
+    Fix hello world output
+
+commit 3d3c5d82535ad3c2f8d6776d994d8b0fa8984398
+Author: Derk-Jan Karrenbeld <derk-jan@delftsolutions.nl>
+Date:   Sun Sep 28 20:34:48 2025 +0200
+
+    Add hello world
+`.trim()}
+    />
+  </CodeSlide>
+</SlidesLayout>

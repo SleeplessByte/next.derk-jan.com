@@ -1,0 +1,17 @@
+---
+import SlidesLayout from "../../../layouts/talks/embrace-the-patch.astro";
+import ImageSlide from "../../../components/Slide/ImageSlide.astro";
+
+import harvardMark from "../../../assets/talks/embrace-the-patch/harvard_mark_I_program_tape.agr.jpg";
+---
+
+<SlidesLayout title="Slide 4: Paper patching">
+  <ImageSlide
+    src={harvardMark}
+    cite-url="https://en.wikipedia.org/wiki/Punched_tape#/media/File:Harvard_Mark_I_program_tape.agr.jpg"
+    caption="A 24-channel program tape for the Harvard Mark I."
+    author="Arnold Reinhold"
+    next-href="/talks/embrace-the-patch/05"
+    next-label="Go to slide 5: Paper patch up close"
+  />
+</SlidesLayout>

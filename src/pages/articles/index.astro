@@ -2,6 +2,9 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import StaticDate from "../../components/StaticDate";
+import "../../styles/transitions.css";
+
+import md5 from "../../functions/md5";
 
 const articles = (await getCollection("articles")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -32,7 +35,10 @@ const articles = (await getCollection("articles")).sort(
                     aria-describedby={`${article.id}-description`}
                     data-astro-prefetch
                   >
-                    {article.data.title}
+                    {/*transition:animate="slide"
+                      transition:name={md5(article.id)}
+                      */}
+                    <span>{article.data.title}</span>
                   </a>
                 </h2>
                 <span class="text-zinc-600 dark:text-zinc-400">

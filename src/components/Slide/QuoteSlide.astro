@@ -1,0 +1,66 @@
+---
+type Props = { "cite:href": string; cite: string } & (
+  | { "next-href"?: undefined; "next-label"?: undefined }
+  | {
+      "next-href": string;
+      "next-label": string;
+    }
+);
+
+const {
+  "next-href": nextHref,
+  "next-label": nextLabel,
+  "cite:href": citeHref,
+  cite,
+} = Astro.props;
+---
+
+<section
+  class="slide flex flex-col pt-4 md:pt-6 lg:pt-12 px-6 md:px-8 lg:px-12"
+  transition:name="slide"
+>
+  <h2
+    transition:name="text"
+    class="!m-0 font-bold py-6 md:text-5xl sm:text-3xl text-2xl"
+  >
+    <slot name="title" />
+  </h2>
+
+  <figure class="!m-0 py-6">
+    <blockquote
+      cite={citeHref}
+      class="max-w-prose border-l-4 border-dotted border-zinc-700 dark:border-zinc-200 mr-12 font-light"
+    >
+      <slot name="quote" />
+    </blockquote>
+    <cite class="opacity-65">&mdash; {cite}</cite>
+  </figure>
+
+  {
+    nextHref ? (
+      <footer
+        class="absolute right-0 top-0 bottom-0 flex items-center"
+        transition:name="next"
+      >
+        <a rel="next" href={nextHref} class="group">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            role="img"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+            />
+            <title>{nextLabel}</title>
+          </svg>
+        </a>
+      </footer>
+    ) : null
+  }
+</section>

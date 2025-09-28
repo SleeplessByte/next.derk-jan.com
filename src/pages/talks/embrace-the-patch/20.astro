@@ -1,0 +1,37 @@
+---
+import SlidesLayout from "../../../layouts/talks/embrace-the-patch.astro";
+
+import CodeSlide from "../../../components/Slide/CodeSlide.astro";
+import { Code } from "astro:components";
+---
+
+<SlidesLayout title="Slide 20: Linux Kernel">
+  <CodeSlide
+    class="ring-4 ring-pink-300 ring-offset-2 ring-offset-pink-600/50"
+    cite-url="https://www.ozlabs.org/~akpm/stuff/tpp.txt"
+    next-href="/talks/embrace-the-patch/21"
+    next-label="Go to slide 21: Patch driven development"
+  >
+    <Code
+      class="!max-h-full !my-0"
+      slot="single"
+      lang="text"
+      code={`
+The perfect patch.
+akpm@osdl.org
+Updated 4 March 2006
+
+The latest version of this document may be found at
+http://www.zip.com.au/~akpm/linux/patches/stuff/tpp.txt
+
+Please also see http://linux.yyz.us/patch-format.html
+
+1: Delivery
+===========
+
+a) Patches are delivered via email only.  Downloading them from internet
+   servers is a pain.
+`.trim()}
+    />
+  </CodeSlide>
+</SlidesLayout>

@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from "astro:transitions";
 import Layout from "../../layouts/Layout.astro";
 
 const { title } = Astro.props;
@@ -63,5 +62,3 @@ const currentPath = Astro.url.pathname;
     <slot />
   </main>
 </Layout>
-
-<ClientRouter />

@@ -1,0 +1,96 @@
+---
+import { Image } from "astro:assets";
+
+type Props = {
+  src: ImageMetadata;
+  class?: string;
+  "cite-url"?: string;
+  caption: string;
+  author?: string;
+  mode?: "cover" | "contain";
+  "image-class"?: string;
+} & (
+  | { "next-href"?: undefined; "next-label"?: undefined }
+  | {
+      "next-href": string;
+      "next-label": string;
+    }
+);
+
+const {
+  "cite-url": citeUrl,
+  class: className = "",
+  caption,
+  author,
+  src,
+  "next-href": nextHref,
+  "next-label": nextLabel,
+  "image-class": imageClass = "",
+  mode = "cover",
+} = Astro.props;
+---
+
+<section class={`slide ${className} flex-col`} transition:name="slide">
+  <figure
+    class="!m-0 !p-0 flex flex-col h-full overflow-hidden"
+    transition:name="figure"
+  >
+    <blockquote class="!p-0 h-full" cite={citeUrl} transition:name="blockquote">
+      <Image
+        src={src}
+        width={src.width}
+        height={src.height}
+        alt=""
+        class={`w-full h-full !m-0 ${mode === "cover" ? "object-cover" : "object-contain"} ${imageClass}`}
+        transition:name="image"
+        layout="constrained"
+      />
+    </blockquote>
+    <figcaption
+      class="absolute bottom-0 left-0 right-0 !m-0 block overflow-hidden"
+      transition:name="figcaption"
+      transition:animate="fade"
+    >
+      <span
+        class="block text-zinc-800 dark:text-zinc-200 bg-white/95 dark:bg-zinc-800/95 p-2 sm:p-6 sm:rounded-tr-lg sm:mr-auto sm:min-h-[80px] max-w-full sm:w-max"
+      >
+        {caption}
+        {
+          author ? (
+            <span>
+              By <cite>{author}</cite>
+            </span>
+          ) : null
+        }.</span
+      >
+    </figcaption>
+  </figure>
+
+  {
+    nextHref ? (
+      <footer
+        class="absolute right-0 top-0 bottom-0 flex items-center"
+        transition:name="next"
+      >
+        <a rel="next" href={nextHref} class="group">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            role="img"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+            />
+            <title>{nextLabel}</title>
+          </svg>
+        </a>
+      </footer>
+    ) : null
+  }
+</section>

@@ -1,0 +1,18 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import colossusFrontal from "../../../../assets/talks/embrace-the-patch/apache-1997-06-15.png";
+import ImageSlide from "../../../../components/Slide/ImageSlide.astro";
+---
+
+<SlidesLayout title="Slide 19: Apache origin">
+  <ImageSlide
+    class="ring-4 ring-pink-300 ring-offset-2 ring-offset-pink-600/50"
+    src={colossusFrontal}
+    cite-url="https://web.archive.org/web/19970615081902/http:/www.apache.org/info.html#:~:text=Why%20is%20it,CHy%20server"
+    caption="A PACtHy."
+    author="http://www.apache.org/info.html"
+    next-href="/talks/embrace-the-patch/20"
+    next-label="Go to slide 20: Linux Kernel"
+    mode="contain"
+  />
+</SlidesLayout>

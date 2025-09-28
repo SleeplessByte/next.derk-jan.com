@@ -1,0 +1,19 @@
+---
+import SlidesLayout from "../../../layouts/talks/embrace-the-patch.astro";
+import ImageSlide from "../../../components/Slide/ImageSlide.astro";
+
+import paperExample from "../../../assets/talks/embrace-the-patch/papertape-wikipedia-example.svg.png";
+---
+
+<SlidesLayout title="Slide 3: Paper encoding">
+  <ImageSlide
+    src={paperExample}
+    cite-url="https://en.wikipedia.org/wiki/Punched_tape#/media/File:Papertape-Wikipedia-example-dark1.svg"
+    caption="The word 'Wikipedia', and a CR/LF as 7-bit ASCII, without a parity bit."
+    author="Vanessa Ezekowitz"
+    next-href="/talks/embrace-the-patch/04"
+    next-label="Go to slide 4: Paper patching"
+    mode="contain"
+    image-class="bg-white"
+  />
+</SlidesLayout>

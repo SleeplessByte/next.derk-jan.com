@@ -1,8 +1,8 @@
 ---
-import { ClientRouter } from "astro:transitions";
 import Layout from "../../layouts/Layout.astro";
+import "../../styles/transitions.css";
 
-const { title } = Astro.props;
+const { title, "slides-class": slidesClass } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
@@ -58,10 +58,8 @@ const currentPath = Astro.url.pathname;
 
   <main
     id="content"
-    class="prose-lg sm:prose-xl md:prose-2xl min-h-screen slides"
+    class={`prose-lg sm:prose-xl md:prose-2xl min-h-screen ${slidesClass ?? "fixed-slides"}`}
   >
     <slot />
   </main>
 </Layout>
-
-<ClientRouter />

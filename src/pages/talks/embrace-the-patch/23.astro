@@ -1,0 +1,26 @@
+---
+import SlidesLayout from "../../../layouts/talks/embrace-the-patch.astro";
+import QuoteSlide from "../../../components/Slide/QuoteSlide.astro";
+---
+
+<SlidesLayout title="Slide 23: Why kernel development still uses email">
+  <QuoteSlide
+    cite:href="https://lwn.net/Articles/702177/#:~:text=In%20short%2C%20Greg,higher%20than%20that"
+    cite="https://lwn.net/Articles/702177"
+    next-href="/talks/embrace-the-patch/24"
+    next-label="Go to slide 24: Uncommon but not rare"
+  >
+    <Fragment slot="title"> Why kernel development still uses email </Fragment>
+    <Fragment slot="quote">
+      In short, Greg said, kernel developers still use email because it is <strong
+        class="font-bold"
+      >
+        faster than any of the alternatives</strong
+      >. Over the course of the last year, the project accepted about <strong
+        class="font-bold">eight changes per hour</strong
+      > — every hour — <strong class="font-bold"
+        >from over 4,000 developers</strong
+      > sponsored by over 400 companies.
+    </Fragment>
+  </QuoteSlide>
+</SlidesLayout>

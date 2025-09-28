@@ -1,0 +1,47 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+import { Code } from "astro:components";
+
+import { transformerMetaHighlight } from "@shikijs/transformers";
+
+const transformers = [
+  transformerMetaHighlight({
+    className:
+      "highlighted rounded-sm ring-2 ring-offset-2 ring-offset-pink-500 ring-black/50",
+  }),
+];
+---
+
+<SlidesLayout title="Slide 8.2: explaining diff">
+  <CodeSlide
+    next-href="/talks/embrace-the-patch/08/3-prepare-for-diff"
+    next-label="Go to slide 8.3: explaining diff"
+  >
+    <Code
+      slot="before"
+      lang="ruby"
+      code={`
+class HelloWorld
+  def self.hello
+    "Goodbye, Mars!"
+  end
+end
+`.trim()}
+    />
+
+    <Code
+      slot="after"
+      lang="ruby"
+      meta="{3}"
+      transformers={transformers}
+      code={`
+class HelloWorld
+  def self.hello
+    "Hello, World!"
+  end
+end
+`.trim()}
+    />
+  </CodeSlide>
+</SlidesLayout>

@@ -1,0 +1,17 @@
+---
+import SlidesLayout from "../../../layouts/talks/embrace-the-patch.astro";
+import ImageSlide from "../../../components/Slide/ImageSlide.astro";
+
+import colossusPaperTape from "../../../assets/talks/embrace-the-patch/colossus_paper_tape.jpg";
+---
+
+<SlidesLayout title="Slide 2: The Colossus Mark 2 paper tape drive mechanism">
+  <ImageSlide
+    src={colossusPaperTape}
+    cite-url="https://en.wikipedia.org/wiki/Punched_tape#/media/File:Colossus_Paper_Tape.JPG"
+    caption="The Colossus Mark 2 paper tape drive mechanism"
+    author="Ibonzer"
+    next-href="/talks/embrace-the-patch/03"
+    next-label="Go to slide 3: Paper encoding"
+  />
+</SlidesLayout>

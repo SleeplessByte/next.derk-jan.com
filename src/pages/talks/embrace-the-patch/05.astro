@@ -1,0 +1,18 @@
+---
+import SlidesLayout from "../../../layouts/talks/embrace-the-patch.astro";
+import ImageSlide from "../../../components/Slide/ImageSlide.astro";
+
+import paperPatch from "../../../assets/talks/embrace-the-patch/patch.jpg";
+---
+
+<SlidesLayout title="Slide 5: Paper patch up close">
+  <ImageSlide
+    src={paperPatch}
+    cite-url="https://www.bram.us/2017/01/24/why-a-software-patch-is-called-a-patch/"
+    caption="Patches on punched tape."
+    author="www.bram.us, courtesy of the Smithsonian Archives Center"
+    next-href="/talks/embrace-the-patch/06"
+    next-label="Go to slide 6: What is a patch?"
+    mode="contain"
+  />
+</SlidesLayout>

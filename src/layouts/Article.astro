@@ -1,11 +1,27 @@
 ---
+import type { CollectionEntry } from "astro:content";
+import type { MarkdownLayoutProps } from "astro";
+
+type Props = CollectionEntry<"articles"> &
+  MarkdownLayoutProps<{
+    title: string;
+    description?: string;
+    date: string;
+    tags?: string[];
+    minutesRead: number;
+  }>;
+
+import md5 from "../functions/md5";
+
 import Newsletter from "../components/Newsletter.astro";
 import StaticDate from "../components/StaticDate";
 import TimeToRead from "../components/TimeToRead";
 import RelLinks from "../components/RelLinks.astro";
 import BaseLayout from "./Layout.astro";
+import "../styles/transitions.css";
 
-const { frontmatter } = Astro.props;
+const { frontmatter, id } = Astro.props;
+const transitionName = md5(id || "");
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
@@ -45,7 +61,12 @@ const { frontmatter } = Astro.props;
       class="prose prose-lg sm:prose-xl dark:prose-invert prose-zinc max-w-prose mx-auto article"
     >
       <header>
-        <h1 class="font-extrabold text-5xl">{frontmatter.title}</h1>
+        <h1 class="font-extrabold text-5xl">
+          {/* transition:animate="none" transition:name={transitionName}*/}
+          <span>
+            {frontmatter.title}
+          </span>
+        </h1>
         <p style={{ marginTop: -24 }} class="font-bold">
           <StaticDate date={frontmatter.date} aria-label="Published on" /> •{
             " "

@@ -1,0 +1,26 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import { Code } from "astro/components";
+import ShellSlide from "../../../../components/Slide/ShellSlide.astro";
+---
+
+<SlidesLayout title="Slide 25.5: send email">
+  <ShellSlide
+    next-href="/talks/embrace-the-patch/25/6-receive"
+    next-label="Go to slide 25.6: git am"
+  >
+    <Code
+      slot="shell"
+      lang="shell"
+      code={`$ git send-email --to="derk-jan@delftsolutions.nl" *.patch`.trim()}
+    />
+
+    <Code
+      slot="result"
+      lang="shell"
+      code={`
+<generated email>
+    `.trim()}
+    />
+  </ShellSlide>
+</SlidesLayout>

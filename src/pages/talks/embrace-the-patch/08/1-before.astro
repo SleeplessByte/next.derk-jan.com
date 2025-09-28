@@ -1,0 +1,37 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+import { Code } from "astro:components";
+---
+
+<SlidesLayout title="Slide 8.1: explaining diff">
+  <CodeSlide
+    next-href="/talks/embrace-the-patch/08/2-compare"
+    next-label="Go to slide 8.2: explaining diff"
+  >
+    <Code
+      slot="before"
+      lang="ruby"
+      code={`
+class HelloWorld
+  def self.hello
+    "Goodbye, Mars!"
+  end
+end
+`.trim()}
+    />
+
+    <Code
+      class="dark:opacity-50 grayscale"
+      slot="after"
+      lang="ruby"
+      code={`
+class HelloWorld
+  def self.hello
+    "Goodbye, Mars!"
+  end
+end
+`.trim()}
+    />
+  </CodeSlide>
+</SlidesLayout>

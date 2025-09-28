@@ -1,0 +1,23 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import { Code } from "astro/components";
+import ShellSlide from "../../../../components/Slide/ShellSlide.astro";
+---
+
+<SlidesLayout title="Slide 25.6: git am">
+  <ShellSlide
+    next-href="/talks/embrace-the-patch/26/"
+    next-label="Go to slide 26: quick recap"
+    shell:transition-name="result"
+    result:transition-name=""
+  >
+    <Code slot="shell" lang="shell" code={`<received email>`.trim()} />
+
+    <Code
+      slot="result"
+      lang="shell"
+      code={`$ git am *.patch`.trim()}
+      transition:name="shell"
+    />
+  </ShellSlide>
+</SlidesLayout>
