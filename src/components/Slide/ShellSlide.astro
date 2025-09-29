@@ -25,16 +25,16 @@ const {
 ---
 
 <section
-  class={`slide flex-col flex-wrap place-content-center ${className}`}
+  class={`slide flex-col flex-wrap sm:place-content-center ${className}`}
   transition:name="slide"
 >
   <div
     transition:name="code"
-    class="!m-0 px-12 py-6 mx-12 self-center justify-self-center grid grid-rows-2 gap-4"
+    class="!m-0 sm:px-6 md:px-12 py-6 sm:mx-6 md:mx-12 self-center justify-self-center grid grid-rows-2 gap-4 w-full max-w-full h-full sm:h-auto overflow-auto"
     style="grid-template-rows: auto auto 1fr;"
   >
     <div
-      class={`-my-6 overflow-visible empty:hidden ${shellHidden ? "hidden" : ""}`}
+      class={`-my-6 empty:hidden ${shellHidden ? "hidden" : ""}`}
       transition:name={shellTransitionName}
     >
       <slot name="shell" />
@@ -57,7 +57,7 @@ const {
     </slot>
 
     <div
-      class={`-my-6 overflow-visible empty:hidden ${resultHidden ? "hidden" : ""}`}
+      class={`-my-6 empty:hidden ${resultHidden ? "hidden" : ""}`}
       transition:name={resultTransitionName}
     >
       <slot name="result" />

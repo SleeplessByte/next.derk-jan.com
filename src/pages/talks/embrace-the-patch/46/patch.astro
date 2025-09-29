@@ -1,0 +1,24 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+import { Code } from "astro:components";
+---
+
+<SlidesLayout title="Slide 46.4: Apply patches">
+  <CodeSlide
+    next-href="/talks/embrace-the-patch/47"
+    next-label="Go to slide 47: Fork the gem"
+  >
+    <Code
+      slot="single"
+      lang="text"
+      code={`
+# GitHub
+https://github.com/<org>/<repo>/pull/<id>.patch
+
+# GitLab
+https://gitlab.com/<org>/<repo>/pull/<id>.patch
+    `.trim()}
+    />
+  </CodeSlide>
+</SlidesLayout>

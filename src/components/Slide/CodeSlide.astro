@@ -29,13 +29,13 @@ const {
 ---
 
 <section
-  class={`${slideIsEmbedded ? "" : "slide"} ${className} flex-col flex-wrap place-content-center`}
+  class={`${slideIsEmbedded ? "" : "slide"} ${className} flex-col flex-wrap sm:place-content-center  max-w-full max-h-full overflow-auto`}
   transition:name={slideIsEmbedded ? undefined : "slide"}
   style={slideIsEmbedded ? "zoom: 0.5" : ""}
 >
   <div
     transition:name="code"
-    class="!m-0 px-12 py-6 mx-12 self-center justify-self-center grid grid-cols-3 gap-12"
+    class="!m-0 sm:px-6 md:px-12 py-6 sm:mx-6 md:mx-12 self-center justify-self-center grid grid-cols-3 gap-12 w-full max-w-full h-full sm:h-auto overflow-auto"
     style="grid-template-columns: 1fr auto 1fr;"
   >
     <div

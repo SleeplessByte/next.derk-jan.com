@@ -111,16 +111,25 @@
   @apply rounded-xl shadow-md dark:shadow-2xl bg-white dark:bg-zinc-950;
 }
 
+body:has(.fixed-slides) {
+  @apply bg-zinc-100 dark:bg-zinc-950;
+}
+
 .fixed-slides {
-  @apply flex flex-col place-content-center flex-wrap p-2 md:p-8 xl:p-12 h-screen w-screen bg-zinc-100 dark:bg-zinc-950;
+  @apply p-2 md:p-8 xl:p-12 max-h-dvh box-border max-w-dvw  aspect-video overflow-hidden min-w-0 min-h-0;
+  @apply m-auto flex flex-col;
 
   & .slide {
-    @apply aspect-video m-auto overflow-auto rounded-lg;
+    @apply m-auto overflow-auto rounded-lg box-border;
     @apply border-4 border-solid border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900;
     @apply shadow-lg dark:shadow-zinc-800/25;
-    @apply w-full h-auto relative;
+    @apply flex-1 relative;
 
     @apply flex;
+
+    height: auto;
+    width: 100%;
+    aspect-ratio: 16/9;
 
     & footer {
       & a[rel="next"],

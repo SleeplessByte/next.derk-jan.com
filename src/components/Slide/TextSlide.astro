@@ -15,12 +15,12 @@ const {
 ---
 
 <section
-  class={`slide ${className} flex-col flex-wrap place-content-center`}
+  class={`slide ${className} flex-col flex-wrap sm:place-content-center`}
   transition:name="slide"
 >
   <h2
     transition:name="text"
-    class="!m-0 font-bold px-12 py-6 md:text-7xl sm:text-5xl text-3xl mx-12 self-center justify-self-center"
+    class="!m-0 font-bold px-12 py-6 lg:text-7xl md:text-5xl text-3xl mx-12 self-center justify-self-center"
   >
     <slot />
   </h2>

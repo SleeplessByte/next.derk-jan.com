@@ -9,14 +9,20 @@ import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
     next-href="/talks/embrace-the-patch/46"
     next-label="Go to slide 46: Vendoring"
   >
-    <Code
-      slot="single"
-      lang="ruby"
-      code={`
+    <div slot="single">
+      <Code
+        lang="ruby"
+        code={`
 ActiveSupport.on_load(:action_controller) do
   require_relative './actionpack/lib/action_dispatch/middleware/cookies.rb'
 end
 `.trim()}
-    />
+      />
+      <div>
+        <a
+          href="https://guides.rubyonrails.org/v7.0/engines.html#available-load-hooks"
+          >Rails Guides 7.0: List of available hooks</a>
+      </div>
+    </div>
   </CodeSlide></SlidesLayout
 >
