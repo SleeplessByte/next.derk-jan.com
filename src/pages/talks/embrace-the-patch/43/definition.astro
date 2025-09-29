@@ -1,0 +1,20 @@
+---
+import QuoteSlide from "../../../../components/Slide/QuoteSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+---
+
+<SlidesLayout title="Slide 43.1: Defining monkeypatch">
+  <QuoteSlide
+    cite:href="https://web.archive.org/web/20120114085702/http://podcast.rubyonrails.org/programs/1/episodes/railsconf-2007"
+    cite="Patrick Ewing in RailsConf 2007"
+    next-href="/talks/embrace-the-patch/43/example"
+    next-label="Go to slide 43.2: Example monkeypatch"
+  >
+    <Fragment slot="title">Defining monkeypatch</Fragment>
+    <Fragment slot="quote">
+      ...if it walks like a duck and talks like a duck, it’s a duck, right? So
+      if this duck is not giving you the noise that you want, you’ve got to just
+      punch that duck until it returns what you expect.</Fragment
+    >
+  </QuoteSlide>
+</SlidesLayout>

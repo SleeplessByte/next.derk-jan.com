@@ -1,0 +1,27 @@
+---
+import { Code } from "astro:components";
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+---
+
+<SlidesLayout title="Slide 43.2: Example monkeypatch">
+  <CodeSlide
+    next-href="/talks/embrace-the-patch/43/responsible"
+    next-label="Go to slide 43.2: Responsible monkeypatch"
+  >
+    <Code
+      slot="single"
+      lang="ruby"
+      code={`
+class String
+  def camelize
+    dup.gsub(/_([a-z])/) { $1.upcase }
+  end
+end
+
+"Hello_world".camelize
+# => "HelloWorld"
+    `.trim()}
+    />
+  </CodeSlide>
+</SlidesLayout>

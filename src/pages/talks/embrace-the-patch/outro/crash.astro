@@ -1,0 +1,18 @@
+---
+import ImageSlide from "../../../../components/Slide/ImageSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+
+import dependencySrc from "../../../../assets/talks/embrace-the-patch/dependency_crumble.png";
+---
+
+<SlidesLayout title="Slide outro">
+  <ImageSlide
+    next-href="/talks/embrace-the-patch/outro/patch"
+    next-label="Go to slide outro"
+    src={dependencySrc}
+    cite-url="https://mastodon.social/@ahl/112243141693101752"
+    author="Adam Leventhal"
+    caption="When it all comes crashing down..."
+    mode="contain"
+  />
+</SlidesLayout>

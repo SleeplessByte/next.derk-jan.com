@@ -1,0 +1,25 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import TextSlide from "../../../../components/Slide/TextSlide.astro";
+---
+
+<SlidesLayout title="Slide 38.9: How to patch a package">
+  <TextSlide
+    class="ring-4 ring-green-300 ring-offset-2 ring-offset-green-600/50"
+    next-href="/talks/embrace-the-patch/39"
+    next-label="Go to slide 39: Ruby gems"
+  >
+    <Fragment>
+      You'll often need to edit the compiled output<span class="text-pink-500"
+        >*</span
+      >.
+    </Fragment>
+    <small
+      slot="meta"
+      class="!m-0 font-normal px-12 py-6 text-base mx-12 self-center justify-self-center"
+    >
+      <span class="text-pink-500">*</span>: depending on your build pipeline (if
+      any).
+    </small>
+  </TextSlide>
+</SlidesLayout>

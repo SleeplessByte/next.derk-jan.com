@@ -1,0 +1,27 @@
+---
+import { Code } from "astro:components";
+import CodeSlide from "../../../components/Slide/CodeSlide.astro";
+import SlidesLayout from "../../../layouts/talks/embrace-the-patch.astro";
+---
+
+<SlidesLayout title="Slide 47: Fork the gem">
+  <CodeSlide
+    next-href="/talks/embrace-the-patch/48"
+    next-label="Go to slide 48: Techniques"
+  >
+    <Code
+      slot="single"
+      lang="ruby"
+      code={`
+# Forking the gem
+
+gem 'mygem',
+     git: 'https://github.com/user/mygem',
+     ref: '60a76fc71f347b7c0e0d861626f6f04b6e3c877e'
+
+# branch: 'my-branch'
+#    tag: 'my-tag'
+`.trim()}
+    />
+  </CodeSlide></SlidesLayout
+>

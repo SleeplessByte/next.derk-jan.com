@@ -1,0 +1,57 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+
+const nextHref = "/talks/embrace-the-patch/42/2-list";
+const nextLabel = "Go to slide 42.2: Patching without patch files";
+---
+
+<SlidesLayout title="Slide 42.2: Patching without patch files">
+  <section
+    class="slide flex-col flex-wrap place-content-center"
+    transition:name="slide"
+  >
+    <div
+      class="!m-0 px-12 py-6 mx-12 self-center justify-self-center grid grid-cols-1 grid-rows-3 gap-x-12 gap-y-4"
+      style="grid-template-columns: 1fr; grid-template-rows: auto auto 1fr;"
+    >
+      <h2
+        class="!m-0 font-bold px-12 py-6 md:text-7xl sm:text-5xl text-3xl mx-12 self-center justify-self-center"
+        transition:name="title"
+      >
+        Patching without patch files
+      </h2>
+      <ul class="list list-disc list-inside" transition:name="list">
+        <li>Monkeypatch 🐒</li>
+        <li>Refinement (Monkeypatch 2.0?)</li>
+      </ul>
+    </div>
+
+    {
+      nextHref ? (
+        <footer
+          class="absolute right-0 top-0 bottom-0 flex items-center"
+          transition:name="next"
+        >
+          <a rel="next" href={nextHref} class="group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              role="img"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+              <title>{nextLabel}</title>
+            </svg>
+          </a>
+        </footer>
+      ) : null
+    }
+  </section>
+</SlidesLayout>

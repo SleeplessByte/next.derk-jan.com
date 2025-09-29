@@ -1,0 +1,17 @@
+---
+import ImageSlide from "../../../../components/Slide/ImageSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+
+import patchedBackSrc from "../../../../assets/talks/embrace-the-patch/patched-back.png";
+---
+
+<SlidesLayout title="Slide outro">
+  <ImageSlide
+    next-href="/talks/embrace-the-patch/final"
+    next-label="Go to the last slide"
+    src={patchedBackSrc}
+    cite-url="#"
+    author="Erasmus MC"
+    caption="Patches work just fine"
+  />
+</SlidesLayout>

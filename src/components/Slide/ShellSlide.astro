@@ -1,5 +1,6 @@
 ---
 type Props = {
+  class?: string;
   "shell:transition-name"?: string;
   "shell:hidden"?: boolean;
   "result:transition-name"?: string;
@@ -13,6 +14,7 @@ type Props = {
 );
 
 const {
+  class: className = "",
   "next-href": nextHref,
   "next-label": nextLabel,
   "shell:transition-name": shellTransitionName = "shell",
@@ -23,7 +25,7 @@ const {
 ---
 
 <section
-  class="slide flex-col flex-wrap place-content-center"
+  class={`slide flex-col flex-wrap place-content-center ${className}`}
   transition:name="slide"
 >
   <div

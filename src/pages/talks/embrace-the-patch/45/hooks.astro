@@ -1,0 +1,22 @@
+---
+import { Code } from "astro:components";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+---
+
+<SlidesLayout title="Slide 45: JIT patches">
+  <CodeSlide
+    next-href="/talks/embrace-the-patch/46"
+    next-label="Go to slide 46: Vendoring"
+  >
+    <Code
+      slot="single"
+      lang="ruby"
+      code={`
+ActiveSupport.on_load(:action_controller) do
+  require_relative './actionpack/lib/action_dispatch/middleware/cookies.rb'
+end
+`.trim()}
+    />
+  </CodeSlide></SlidesLayout
+>

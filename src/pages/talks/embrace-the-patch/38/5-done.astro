@@ -1,0 +1,35 @@
+---
+import { Code } from "astro/components";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+---
+
+<SlidesLayout title="Slide 38.5: How to patch a package">
+  <CodeSlide
+    class="ring-4 ring-green-300 ring-offset-2 ring-offset-green-600/50"
+    next-href="/talks/embrace-the-patch/38/6-notes"
+    next-label="Go to slide 38.6: How to patch a package"
+  >
+    <Code
+      slot="single"
+      lang="diff"
+      class="!max-h-full"
+      style="zoom: 0.85"
+      code={`
+diff --git a/dev/lib/create-tokenizer.js b/dev/lib/create-tokenizer.js
+index abd242f2cdd975ab0081394299b3e9194384ce8e..d92b2fe325e2b5ba0394657efbce82f13c49f0a7 100644
+--- a/dev/lib/create-tokenizer.js
++++ b/dev/lib/create-tokenizer.js
+@@ -37,7 +37,7 @@
+  *   Nothing.
+  */
+
+-import createDebug from 'debug'
++import * as createDebug from 'debug'
+ import {ok as assert} from 'devlop'
+ import {markdownLineEnding} from 'micromark-util-character'
+ import {push, splice} from 'micromark-util-chunked'
+`.trim()}
+    />
+  </CodeSlide>
+</SlidesLayout>

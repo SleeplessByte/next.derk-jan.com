@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  micromark:
+    hash: 5f4b9a5aba239ff25c2215576b02013bbeac525b86a047f77c6b045e82db218c
+    path: patches/micromark.patch
+
 importers:
 
   .:
@@ -3560,7 +3565,7 @@ snapshots:
       decode-named-character-reference: 1.2.0
       devlop: 1.1.0
       mdast-util-to-string: 4.0.0
-      micromark: 4.0.2
+      micromark: 4.0.2(patch_hash=5f4b9a5aba239ff25c2215576b02013bbeac525b86a047f77c6b045e82db218c)
       micromark-util-decode-numeric-character-reference: 2.0.2
       micromark-util-decode-string: 2.0.1
       micromark-util-normalize-identifier: 2.0.1
@@ -3953,7 +3958,7 @@ snapshots:
 
   micromark-util-types@2.0.2: {}
 
-  micromark@4.0.2:
+  micromark@4.0.2(patch_hash=5f4b9a5aba239ff25c2215576b02013bbeac525b86a047f77c6b045e82db218c):
     dependencies:
       '@types/debug': 4.1.12
       debug: 4.4.3

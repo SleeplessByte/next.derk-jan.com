@@ -1,0 +1,29 @@
+---
+import { Code } from "astro/components";
+import ShellSlide from "../../../../components/Slide/ShellSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+---
+
+<SlidesLayout title="Slide 38.4: How to patch a package">
+  <ShellSlide
+    class="ring-4 ring-green-300 ring-offset-2 ring-offset-green-600/50"
+    next-href="/talks/embrace-the-patch/38/5-done"
+    next-label="Go to slide 38.5: How to patch a package"
+  >
+    <Code
+      slot="shell"
+      lang="shell"
+      code={`pnpm patch-commit "{path-to}\\node_modules\\.pnpm_patches\\micromark@4.0.2"`.trim()}
+    />
+
+    <Code
+      slot="result"
+      lang="shell"
+      code={`
+Packages: -1
+-
+Progress: resolved 499, reused 413, downloaded 0, added 1, done
+`.trim()}
+    />
+  </ShellSlide>
+</SlidesLayout>

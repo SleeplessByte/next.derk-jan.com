@@ -1,0 +1,32 @@
+---
+import { Code } from "astro/components";
+import ShellSlide from "../../../../components/Slide/ShellSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+---
+
+<SlidesLayout title="Slide 38.1: How to patch a package">
+  <ShellSlide
+    class="ring-4 ring-green-300 ring-offset-2 ring-offset-green-600/50"
+    next-href="/talks/embrace-the-patch/38/2-output"
+    next-label="Go to slide 38.2: How to patch a package"
+    shell:transition-name="shell-1"
+    result:transition-name="output-1"
+  >
+    <Code slot="shell" lang="shell" code={`$ pnpm patch micromark`.trim()} />
+
+    <Code
+      slot="result"
+      lang="shell"
+      code={`
+pnpm patch micromark@4.0.2
+Patch: You can now edit the package at:
+
+  "{path-to}\\node_modules\\.pnpm_patches\\micromark@4.0.2"
+
+To commit your changes, run:
+
+  pnpm patch-commit "{path-to}\\node_modules\\.pnpm_patches\\micromark@4.0.2"
+    `.trim()}
+    />
+  </ShellSlide>
+</SlidesLayout>

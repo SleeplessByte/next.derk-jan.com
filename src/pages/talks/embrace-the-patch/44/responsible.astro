@@ -1,0 +1,25 @@
+---
+import TextSlide from "../../../../components/Slide/TextSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+---
+
+<SlidesLayout title="Slide 44.3: Responsible refinement">
+  <TextSlide
+    next-href="/talks/embrace-the-patch/45"
+    next-label="Go to slide 45: JIT Patches"
+  >
+    <Fragment>Responsible refinements? </Fragment>
+
+    <span
+      slot="meta"
+      class="!m-0 font-normal px-12 py-6 text-base mx-12 self-center justify-self-center"
+    >
+      <a
+        href="https://reinteractive.com/articles/ruby-refinements-vs-monkey-patching-best-practices"
+        >Best practices</a
+      > & <a href="https://blog.headius.com/2012/11/refining-ruby.html"
+        >Historical issues</a
+      >
+    </span>
+  </TextSlide>
+</SlidesLayout>

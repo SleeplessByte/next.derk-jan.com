@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../../layouts/talks/embrace-the-patch.astro";
+
+import textileMarket from "../../../assets/talks/embrace-the-patch/textile-market.jpg";
+import qrCode from "../../../assets/talks/embrace-the-patch/qr_code.png";
+---
+
+<Layout title="Final page & slide">
+  <h2 class="sr-only">Final page and slide of the talk</h2>
+
+  <section
+    class="slide flex-col sm:flex-row sm:flex-wrap sm:place-content-center"
+  >
+    <div class="overflow-auto z-10 flex flex-col w-full sm:w-auto">
+      <header
+        class="relative z-10 bg-zinc-50/90 dark:bg-zinc-900/90 p-6 sm:mx-auto sm:rounded-2xl sm:mt-12"
+      >
+        <h3 class="font-semibold text-center !mt-4" id="title-slide-1">
+          Embrace the Patch
+        </h3>
+      </header>
+
+      <figure class="w-full text-center pb-16 mx-auto">
+        <blockquote
+          cite="https://www.pexels.com/photo/colorful-textile-market-aerial-view-with-vibrant-patterns-33434117/"
+        >
+          <Image
+            src={textileMarket}
+            width={textileMarket.width}
+            height={textileMarket.height}
+            layout="constrained"
+            loading="eager"
+            alt=""
+            class="absolute inset-0 overflow-clip w-full h-full object-cover !m-0"
+            style="clip-path: polygon(0 0, 0 40%, 100% 0, 0 0);"
+          />
+        </blockquote>
+        <figcaption class="sr-only">
+          A colorful textile market's aerial view, mimicking the vibrant
+          patterns of textile patchwork, by <cite>Rakibul alam khan</cite>.
+        </figcaption>
+      </figure>
+    </div>
+
+    <footer
+      class="absolute left-0 bottom-0 w-full flex items-center z-10 justify-center"
+    >
+      <Image
+        src={qrCode}
+        width={qrCode.width}
+        height={qrCode.height}
+        layout="constrained"
+        loading="eager"
+        alt="QR code to the first slide"
+        class="aspect-square max-w-56"
+      />
+    </footer>
+  </section>
+</Layout>

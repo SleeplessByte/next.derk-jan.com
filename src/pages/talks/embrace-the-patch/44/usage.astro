@@ -1,0 +1,24 @@
+---
+import { Code } from "astro:components";
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+---
+
+<SlidesLayout title="Slide 44.2: Example refinement">
+  <CodeSlide
+    next-href="/talks/embrace-the-patch/44/responsible"
+    next-label="Go to slide 44.3: Responsible refinement"
+  >
+    <Code
+      slot="single"
+      lang="ruby"
+      code={`
+Foo.new.camelize_string "Hello_word"
+# => "HelloWorld"
+
+"Hello_world".camelize
+# => undefined method camelize for "Hello_word":String (NoMethodError)
+`.trim()}
+    />
+  </CodeSlide>
+</SlidesLayout>

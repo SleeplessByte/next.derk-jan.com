@@ -1,0 +1,18 @@
+---
+import ImageSlide from "../../../../components/Slide/ImageSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+
+import dependencySrc from "../../../../assets/talks/embrace-the-patch/dependency_2x.png";
+---
+
+<SlidesLayout title="Slide outro">
+  <ImageSlide
+    next-href="/talks/embrace-the-patch/outro/crash"
+    next-label="Go to slide outro"
+    src={dependencySrc}
+    cite-url="https://xkcd.com/2347/"
+    author="Randall Munroe"
+    caption="XKCD 2347: Dependency."
+    mode="contain"
+  />
+</SlidesLayout>

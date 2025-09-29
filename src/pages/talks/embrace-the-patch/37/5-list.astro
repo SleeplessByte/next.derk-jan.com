@@ -1,0 +1,68 @@
+---
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+
+const nextHref = "/talks/embrace-the-patch/38";
+const nextLabel = "Go to slide 38: How to patch a package";
+---
+
+<SlidesLayout title="Slide 37.5: How to patch a package">
+  <section
+    class="slide flex-col flex-wrap place-content-center ring-4 ring-green-300 ring-offset-2 ring-offset-green-600/50"
+    transition:name="slide"
+  >
+    <div
+      class="!m-0 px-12 py-6 mx-12 self-center justify-self-center grid grid-cols-1 grid-rows-3 gap-x-12 gap-y-4"
+      style="grid-template-columns: 1fr; grid-template-rows: auto auto 1fr;"
+    >
+      <h2
+        class="!m-0 font-bold px-12 py-6 md:text-7xl sm:text-5xl text-3xl mx-12 self-center justify-self-center"
+        transition:name="title"
+      >
+        How to patch a package?
+      </h2>
+      <ul class="list list-disc list-inside" transition:name="list">
+        <li>
+          Run <code class="text-pink-500"
+            >&lt;binary&gt; patch &lt;some-package&gt;</code
+          >
+        </li>
+        <li>Open the temporary editable copy</li>
+        <li>Make the changes</li>
+        <li>
+          Run <code class="text-pink-500"
+            >&lt;binary&gt; patch-commit &lt;some-path&gt;</code
+          > (or equivalent)
+        </li>
+        <li>Commit your patch & rejoice 🥳</li>
+      </ul>
+    </div>
+
+    {
+      nextHref ? (
+        <footer
+          class="absolute right-0 top-0 bottom-0 flex items-center"
+          transition:name="next"
+        >
+          <a rel="next" href={nextHref} class="group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              role="img"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+              <title>{nextLabel}</title>
+            </svg>
+          </a>
+        </footer>
+      ) : null
+    }
+  </section>
+</SlidesLayout>

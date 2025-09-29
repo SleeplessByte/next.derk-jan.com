@@ -1,0 +1,32 @@
+---
+import { Code } from "astro/components";
+import ShellSlide from "../../../../components/Slide/ShellSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+---
+
+<SlidesLayout title="Slide 38.3: How to patch a package">
+  <ShellSlide
+    class="ring-4 ring-green-300 ring-offset-2 ring-offset-green-600/50"
+    next-href="/talks/embrace-the-patch/38/4-commit"
+    next-label="Go to slide 38.4: How to patch a package"
+    shell:transition-name="shell-2"
+    result:transition-name="output-2"
+  >
+    <Code
+      slot="shell"
+      lang="shell"
+      code={`code "{path-to}\\node_modules\.pnpm_patches\\micromark@4.0.2"`.trim()}
+    />
+
+    <Code
+      slot="result"
+      lang="shell"
+      code={`
+# <make changes>
+# or
+
+$ git apply {some-patch-i-have}.patch
+`.trim()}
+    />
+  </ShellSlide>
+</SlidesLayout>

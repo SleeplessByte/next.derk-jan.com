@@ -1,0 +1,40 @@
+---
+import { Code } from "astro:components";
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+---
+
+<SlidesLayout title="Slide 44.1: Example refinement">
+  <CodeSlide
+    next-href="/talks/embrace-the-patch/44/usage"
+    next-label="Go to slide 44.2: Example refinement"
+  >
+    <Code
+      slot="before"
+      lang="ruby"
+      code={`
+module Camelize
+  refine String do
+    def camelize
+      dup.gsub(/_([a-z])/) { $1.upcase }
+    end
+  end
+end
+`.trim()}
+    />
+
+    <Code
+      slot="after"
+      lang="ruby"
+      code={`
+class Foo
+  using Camelize
+
+  def camelize_string(str)
+    str.camelize
+  end
+end
+`.trim()}
+    />
+  </CodeSlide>
+</SlidesLayout>

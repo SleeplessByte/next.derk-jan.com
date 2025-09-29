@@ -1,0 +1,14 @@
+---
+import { Code } from "astro:components";
+import ShellSlide from "../../../../components/Slide/ShellSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+---
+
+<SlidesLayout title="Slide 46.1: Extract or download">
+  <ShellSlide
+    next-href="/talks/embrace-the-patch/46/download"
+    next-label="Go to slide 46.2: Extract or download"
+  >
+    <Code slot="single" lang="shell" code={`$ gem unpack some_file.gem`} />
+  </ShellSlide>
+</SlidesLayout>
