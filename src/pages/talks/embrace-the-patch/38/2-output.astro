@@ -1,21 +1,13 @@
 ---
 import { Code } from "astro/components";
 import ShellSlide from "../../../../components/Slide/ShellSlide.astro";
+import { lines } from "../../../../functions/transformations";
 import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
-
-import { transformerMetaHighlight } from "@shikijs/transformers";
-
-const transformers = [
-  transformerMetaHighlight({
-    className:
-      "highlighted rounded-sm ring-2 ring-offset-2 ring-offset-pink-500 ring-black/50",
-  }),
-];
 ---
 
 <SlidesLayout title="Slide 38.2: How to patch a package">
   <ShellSlide
-    class="ring-4 ring-green-300 ring-offset-2 ring-offset-green-600/50"
+    class="--green"
     next-href="/talks/embrace-the-patch/38/3-make-changes"
     next-label="Go to slide 38.3: How to patch a package"
     shell:transition-name="output-1"
@@ -25,7 +17,7 @@ const transformers = [
       slot="shell"
       lang="shell"
       meta="{4,8}"
-      transformers={transformers}
+      transformers={lines}
       code={`
 pnpm patch micromark@4.0.2
 Patch: You can now edit the package at:

@@ -5,9 +5,17 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
-  themeColor?: string;
+  "theme-color"?: string;
+  "disable-client-router"?: boolean;
+  class?: string;
 }
-const { title, description, themeColor } = Astro.props;
+const {
+  title,
+  description,
+  "theme-color": themeColor = "#252A34",
+  "disable-client-router": disableClientRouter = false,
+  class: className = "",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -15,7 +23,7 @@ const { title, description, themeColor } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content={themeColor || "#252A34"} />
+    <meta name="theme-color" content={themeColor} />
     <meta name="generator" content={Astro.generator} />
 
     <title>
@@ -31,9 +39,9 @@ const { title, description, themeColor } = Astro.props;
     <link rel="apple-touch-icon" href="/icons/apple-icon-180x180.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
 
-    <ClientRouter />
+    {disableClientRouter ? null : <ClientRouter />}
   </head>
-  <body>
+  <body class={className}>
     <slot />
   </body>
 </html>

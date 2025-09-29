@@ -25,3 +25,11 @@
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
+
+::view-transition-group-children(slide) {
+  overflow: clip;
+}
+
+.slide * {
+  view-transition-group: nearest;
+}

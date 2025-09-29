@@ -30,31 +30,22 @@ const {
 } = Astro.props;
 ---
 
-<section class={`slide ${className} flex-col`} transition:name="slide">
-  <figure
-    class="!m-0 !p-0 flex flex-col h-full overflow-hidden"
-    transition:name="figure"
-  >
-    <blockquote class="!p-0 h-full" cite={citeUrl} transition:name="blockquote">
+<section class={`slide ${className} --image`} transition:name="slide">
+  <figure transition:name="figure">
+    <blockquote cite={citeUrl} transition:name="blockquote">
       <Image
         src={src}
         width={src.width}
         height={src.height}
         alt=""
-        class={`w-full h-full !m-0 ${mode === "cover" ? "object-cover" : "object-contain"} ${imageClass}`}
+        class={`${mode === "cover" ? "object-cover" : "object-contain"} ${imageClass}`}
         transition:name="image"
         layout="constrained"
         loading="eager"
       />
     </blockquote>
-    <figcaption
-      class="absolute bottom-0 left-0 right-0 !m-0 block overflow-hidden"
-      transition:name="figcaption"
-      transition:animate="fade"
-    >
-      <span
-        class="block text-zinc-800 dark:text-zinc-200 bg-white/95 dark:bg-zinc-800/95 p-2 sm:p-6 sm:rounded-tr-lg sm:mr-auto sm:min-h-[80px] max-w-full sm:w-max"
-      >
+    <figcaption class="" transition:name="figcaption" transition:animate="fade">
+      <span class="">
         {caption}
         {
           author ? (
@@ -69,10 +60,7 @@ const {
 
   {
     nextHref ? (
-      <footer
-        class="absolute right-0 top-0 bottom-0 flex items-center"
-        transition:name="next"
-      >
+      <footer class="controls" transition:name="next">
         <a rel="next" href={nextHref} class="group">
           <svg
             xmlns="http://www.w3.org/2000/svg"

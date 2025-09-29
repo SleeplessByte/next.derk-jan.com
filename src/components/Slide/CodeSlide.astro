@@ -29,41 +29,37 @@ const {
 ---
 
 <section
-  class={`${slideIsEmbedded ? "" : "slide"} ${className} flex-col flex-wrap sm:place-content-center  max-w-full max-h-full overflow-auto`}
-  transition:name={slideIsEmbedded ? undefined : "slide"}
-  style={slideIsEmbedded ? "zoom: 0.5" : ""}
+  class={`slide ${slideIsEmbedded ? "--embedded" : ""} ${className} --code`}
 >
-  <div
-    transition:name="code"
-    class="!m-0 sm:px-6 md:px-12 py-6 sm:mx-6 md:mx-12 self-center justify-self-center grid grid-cols-3 gap-12 w-full max-w-full h-full sm:h-auto overflow-auto"
-    style="grid-template-columns: 1fr auto 1fr;"
-  >
+  <div transition:name="code" class="grid">
     <div
       transition:name={disableBeforeTransition
         ? undefined
         : singleTransitionName !== "before"
           ? "before"
           : undefined}
-      class={`self-center ${beforeHidden ? "w-0" : ""}`}
+      class={`grid-cell ${beforeHidden ? "w-0" : ""}`}
     >
       <slot name="before" />
     </div>
 
-    <slot name="single" transition:name={singleTransitionName}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="size-6 self-center justify-self-center"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"></path>
-      </svg>
-    </slot>
+    <div class="grid-cell">
+      <slot name="single" transition:name={singleTransitionName}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 self-center justify-self-center"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"></path>
+        </svg>
+      </slot>
+    </div>
 
     <div
       transition:name={disableAfterTransition
@@ -71,7 +67,7 @@ const {
         : singleTransitionName !== "after"
           ? "after"
           : undefined}
-      class={`self-center ${afterHidden ? "w-0" : ""}`}
+      class={`grid-cell ${afterHidden ? "w-0" : ""}`}
     >
       <slot name="after" />
     </div>
@@ -79,10 +75,7 @@ const {
 
   {
     nextHref ? (
-      <footer
-        class="absolute right-0 top-0 bottom-0 flex items-center"
-        transition:name="next"
-      >
+      <footer class="controls" transition:name="next">
         <a rel="next" href={nextHref} class="group">
           <svg
             xmlns="http://www.w3.org/2000/svg"

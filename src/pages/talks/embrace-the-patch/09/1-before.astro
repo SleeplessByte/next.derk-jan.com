@@ -2,15 +2,6 @@
 import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
 import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
 import { Code } from "astro:components";
-
-import { transformerMetaHighlight } from "@shikijs/transformers";
-
-const transformers = [
-  transformerMetaHighlight({
-    className:
-      "highlighted rounded-sm ring-2 ring-offset-2 ring-offset-pink-500 ring-black/50",
-  }),
-];
 ---
 
 <SlidesLayout title="Slide 9.1: explaining diff">

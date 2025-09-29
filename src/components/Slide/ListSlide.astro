@@ -1,5 +1,12 @@
 ---
-type Props = { "cite:href": string; cite: string } & (
+type Props = {
+  sizer?: string;
+  start?: number;
+  title?: string;
+  "title:transition-name"?: string;
+  type: "ul" | "ol" | "dl";
+  class?: string;
+} & (
   | { "next-href"?: undefined; "next-label"?: undefined }
   | {
       "next-href": string;
@@ -8,27 +15,33 @@ type Props = { "cite:href": string; cite: string } & (
 );
 
 const {
+  sizer,
+  start,
+  title,
+  "title:transition-name": titleTransitionName = "title",
+  type: List,
   "next-href": nextHref,
   "next-label": nextLabel,
-  "cite:href": citeHref,
-  cite,
+  class: className = "",
 } = Astro.props;
 ---
 
-<section class="slide --quote" transition:name="slide">
-  <div>
-    <h2 transition:name="title">
-      <slot name="title" />
-    </h2>
+<section class={`slide ${className} --list`} transition:name="slide">
+  <div class="grid">
+    <slot name="title">
+      <h2 transition:name={titleTransitionName} class="">{title}</h2></slot
+    >
 
-    <figure class="!m-0 py-6">
-      <blockquote cite={citeHref} class="">
-        <slot name="quote" />
-      </blockquote>
-      <cite class="opacity-65"
-        >&mdash; <a target="_blank" href={citeHref}>{cite}</a></cite
-      >
-    </figure>
+    <List transition:name="list" start={start}>
+      <slot />
+      {
+        sizer ? (
+          <li class="h-1 !m-0" style="visibility: hidden;" aria-hidden="true">
+            {sizer}
+          </li>
+        ) : null
+      }
+    </List>
   </div>
 
   {

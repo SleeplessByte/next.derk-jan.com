@@ -1,16 +1,8 @@
 ---
-import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
-import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
 import { Code } from "astro:components";
-
-import { transformerMetaHighlight } from "@shikijs/transformers";
-
-const transformers = [
-  transformerMetaHighlight({
-    className:
-      "highlighted rounded-sm ring-2 ring-offset-2 ring-offset-pink-500 ring-black/50",
-  }),
-];
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+import { lines } from "../../../../functions/transformations";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
 ---
 
 <SlidesLayout title="Slide 8.2: explaining diff">
@@ -34,7 +26,7 @@ end
       slot="after"
       lang="ruby"
       meta="{3}"
-      transformers={transformers}
+      transformers={lines}
       code={`
 class HelloWorld
   def self.hello

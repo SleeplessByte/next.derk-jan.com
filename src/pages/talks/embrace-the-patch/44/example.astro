@@ -2,6 +2,7 @@
 import { Code } from "astro:components";
 import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
 import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+import { words } from "../../../../functions/transformations";
 ---
 
 <SlidesLayout title="Slide 44.1: Example refinement">
@@ -12,8 +13,10 @@ import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
     <Code
       slot="before"
       lang="ruby"
+      meta="/module Camelize/,/refine String/"
+      transformers={words}
       code={`
-module Camelize
+module Camelize #
   refine String do
     def camelize
       dup.gsub(/_([a-z])/) { $1.upcase }
@@ -26,6 +29,8 @@ end
     <Code
       slot="after"
       lang="ruby"
+      meta="/using Camelize/"
+      transformers={words}
       code={`
 class Foo
   using Camelize

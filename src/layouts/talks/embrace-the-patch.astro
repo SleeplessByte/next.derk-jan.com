@@ -10,28 +10,23 @@ const currentPath = Astro.url.pathname;
   title={title
     ? `${title} · Embrace the Patch: Talk, on Code in Bits and Pieces`
     : "Embrace the Patch: Talk, on Code in Bits and Pieces"}
+  class="slide-wrapper"
 >
-  <header class="mx-auto w-full max-w-5xl px-5 py-8 absolute top-0 z-10">
-    <a
-      href="#content"
-      class="transition sr-only focus:not-sr-only rounded-md focus:fixed focus:top-4 focus:left-4 focus:dark:bg-zinc-900 focus:bg-zinc-100 focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-pink-500 dark:focus:ring-yellow-500"
-    >
-      <span class="block p-2">Skip to main content</span>
+  <header>
+    <a href="#content" class="skip-link">
+      <span>Skip to main content</span>
     </a>
     {
-      currentPath === "/talks/exercism-is-excellent" ? (
+      currentPath === "/talks/embrace-the-patch" ? (
         <nav
-          class={`transition focus-within:opacity-100 hover:opacity-100 ${
-            currentPath !== "/talks/exercism-is-excellent" ? "opacity-20" : ""
+          class={`${
+            currentPath !== "/talks/embrace-the-patch" ? "opacity-20" : ""
           }`}
         >
-          <a
-            href="/talks"
-            class="transition group inline-flex space-x-1 items-center focus:outline-none focus:ring-2 focus:ring-pink-500 dark:focus:ring-yellow-500 rounded-md p-2 -mx-2"
-          >
+          <a href="/talks" class="back-link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 motion-safe:group-hover:animate-bouncel motion-safe:group-focus:animate-bouncel"
+              class=""
               viewBox="0 0 20 20"
               fill="currentColor"
               aria-hidden="true"
@@ -56,10 +51,7 @@ const currentPath = Astro.url.pathname;
     section. Each section has a link at the end to the next section.
   </p>
 
-  <main
-    id="content"
-    class={`prose-lg sm:prose-xl md:prose-2xl min-h-dvh ${slidesClass ?? "fixed-slides"}`}
-  >
+  <main id="content" class={`${slidesClass ?? "fixed-slides"}`}>
     <slot />
   </main>
 </Layout>

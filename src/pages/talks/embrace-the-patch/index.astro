@@ -9,27 +9,19 @@ import { Code } from "astro:components";
 <Layout title="Front page & slide">
   <h2 class="sr-only">Front page and slide of the talk</h2>
 
-  <section
-    class="slide flex-col sm:flex-row sm:flex-wrap sm:place-content-center"
-  >
-    <div class="overflow-auto z-10 flex flex-col w-full sm:w-auto">
-      <header
-        class="relative z-10 bg-zinc-50/90 dark:bg-zinc-900/90 p-6 sm:mx-auto sm:rounded-2xl sm:mt-12"
-      >
-        <h3 class="font-semibold text-center !mt-4" id="title-slide-1">
-          Embrace the Patch
-        </h3>
-        <p
-          class="text-center max-w-md sm:max-w-lg md:max-w-xl mx-auto leading-7 sm:leading-7 md:leading-8"
-        >
-          Prefer <em class="not-italic font-semibold">reduced motion</em>{" "}
-          or a <em class="not-italic font-semibold">light background</em>? Go to <a
+  <section class="slide --center --cover">
+    <div class="slide-content">
+      <header>
+        <h3 id="title-slide-1">Embrace the Patch</h3>
+        <p>
+          Prefer <em>reduced motion</em>{" "}
+          or a <em>light background</em>? Go to <a
             href="https://talks.derk-jan.com">talks.derk-jan.com</a
           > to follow along on your device.
         </p>
       </header>
 
-      <figure class="w-full text-center !mt-0 md:pb-16 mx-auto">
+      <figure class="slanted-background">
         <blockquote
           cite="https://www.pexels.com/photo/colorful-textile-market-aerial-view-with-vibrant-patterns-33434117/"
         >
@@ -40,27 +32,19 @@ import { Code } from "astro:components";
             layout="constrained"
             loading="eager"
             alt=""
-            class="absolute inset-0 overflow-clip w-full h-full object-cover !m-0"
-            style="clip-path: polygon(0 0, 0 40%, 100% 0, 0 0);"
           />
         </blockquote>
-        <figcaption
-          class="italic opacity-80 bg-zinc-50/90 dark:bg-zinc-900/90 max-w-md sm:max-w-prose p-6"
-        >
+        <figcaption>
           A colorful textile market's aerial view, mimicking the vibrant
           patterns of textile patchwork, by <cite>Rakibul alam khan</cite>.
         </figcaption>
       </figure>
     </div>
 
-    <footer class="absolute left-0 bottom-0 w-full flex items-center z-10">
-      <a
-        href="/talks/embrace-the-patch/setup"
-        class="mx-auto prose-lg p-4 transition rounded-md focus:outline-none focus:ring-2 focus:ring-current mb-2 group"
-      >
+    <footer>
+      <a href="/talks/embrace-the-patch/setup" rel="next">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8 motion-safe:animate-pulse relative group-hover:scale-125 group-active:scale-100 transition"
           viewBox="0 0 20 20"
           fill="currentColor"
           aria-hidden="true"

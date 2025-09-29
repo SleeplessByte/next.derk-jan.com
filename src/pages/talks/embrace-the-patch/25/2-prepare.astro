@@ -1,16 +1,8 @@
 ---
-import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
-import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
 import { Code } from "astro/components";
-
-import { transformerMetaWordHighlight } from "@shikijs/transformers";
-
-const transformers = [
-  transformerMetaWordHighlight({
-    className:
-      "highlighted-word rounded-sm ring-2 ring-offset-2 ring-offset-pink-500 ring-black/50",
-  }),
-];
+import CodeSlide from "../../../../components/Slide/CodeSlide.astro";
+import { words } from "../../../../functions/transformations";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
 ---
 
 <SlidesLayout title="Slide 25.2: preparing email patch">
@@ -27,7 +19,7 @@ const transformers = [
       slot="single"
       lang="log"
       meta="/353ff4fd1a44c07d895659e800f6f42449ca3694/,/3d3c5d82535ad3c2f8d6776d994d8b0fa8984398/"
-      transformers={transformers}
+      transformers={words}
       code={`
 commit 353ff4fd1a44c07d895659e800f6f42449ca3694 (HEAD -> talk)
 Author: Derk-Jan Karrenbeld <derk-jan@delftsolutions.nl>

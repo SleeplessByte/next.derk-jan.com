@@ -1,10 +1,13 @@
 ---
+import { Code } from "astro:components";
+
 type Props = {
   class?: string;
-  "shell:transition-name"?: string;
-  "shell:hidden"?: boolean;
-  "result:transition-name"?: string;
-  "result:hidden"?: boolean;
+  "single:transition-name"?: string;
+  "before:disable-transition"?: boolean;
+  "before:transition-name"?: string;
+  "after:disable-transition"?: boolean;
+  "after:transition-name"?: string;
 } & (
   | { "next-href"?: undefined; "next-label"?: undefined }
   | {
@@ -15,26 +18,34 @@ type Props = {
 
 const {
   class: className = "",
+  "single:transition-name": singleTransitionName = "shell-arrow",
+  "before:disable-transition": disableBeforeTransition = false,
+  "after:disable-transition": disableAfterTransition = false,
+  "before:transition-name": beforeTransitionName = "shell",
+  "after:transition-name": afterTransitionName = "result",
   "next-href": nextHref,
   "next-label": nextLabel,
-  "shell:transition-name": shellTransitionName = "shell",
-  "shell:hidden": shellHidden = false,
-  "result:transition-name": resultTransitionName = "result",
-  "result:hidden": resultHidden = false,
 } = Astro.props;
 ---
 
-<section class={`slide --shell ${className}`} transition:name="slide">
-  <div transition:name="code" class="grid">
-    <div
-      class={`grid-cell ${shellHidden ? "hidden" : ""}`}
-      transition:name={shellTransitionName}
-    >
-      <slot name="shell" />
+<section class={`slide --embedded-code ${className}`} transition:name="slide">
+  <div class="grid">
+    <div class="left">
+      <div>
+        <slot name="embedded" />
+      </div>
     </div>
 
-    <div class="grid-cell">
-      <slot name="single" transition:name="single">
+    <div
+      class="grid-item before"
+      transition:name={beforeTransitionName}
+      transition:animate={disableBeforeTransition ? "none" : "fade"}
+    >
+      <slot name="before" />
+    </div>
+
+    <div class="grid-item single">
+      <slot name="single" transition:name={singleTransitionName}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -52,16 +63,20 @@ const {
     </div>
 
     <div
-      class={`grid-cell ${resultHidden ? "hidden" : ""}`}
-      transition:name={resultTransitionName}
+      class="grid-item after"
+      transition:name={afterTransitionName}
+      transition:animate={disableAfterTransition ? "none" : "fade"}
     >
-      <slot name="result" />
+      <slot name="after" />
     </div>
   </div>
 
   {
     nextHref ? (
-      <footer class="controls" transition:name="next">
+      <footer
+        class="absolute right-0 top-0 bottom-0 flex items-center"
+        transition:name="next"
+      >
         <a rel="next" href={nextHref} class="group">
           <svg
             xmlns="http://www.w3.org/2000/svg"
