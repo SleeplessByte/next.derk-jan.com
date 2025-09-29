@@ -63,3 +63,13 @@ const currentPath = Astro.url.pathname;
     <slot />
   </main>
 </Layout>
+
+<script is:inline>
+  window.addEventListener("keypress", (event) => {
+    if (event.key == "n") {
+      document.querySelector('main a[rel="next"]')?.click();
+    } else if (event.key == "b") {
+      history.back();
+    }
+  });
+</script>
