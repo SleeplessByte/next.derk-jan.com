@@ -1,0 +1,20 @@
+---
+import debianPatches from "../../../../assets/talks/embrace-the-patch/debian-patches.png";
+import ImageSlide from "../../../../components/Slide/ImageSlide.astro";
+import SlidesLayout from "../../../../layouts/talks/embrace-the-patch.astro";
+
+const nextHref = "/talks/embrace-the-patch/41";
+const nextLabel = "Go to slide 41: Roll your own";
+---
+
+<SlidesLayout title="Slide 40.8: Debian gems">
+  <ImageSlide
+    src={debianPatches}
+    class="--red"
+    next-href={nextHref}
+    next-label={nextLabel}
+    author=""
+    caption="Debian gems are patches on top of Ruby gems"
+    mode="contain"
+  />
+</SlidesLayout>

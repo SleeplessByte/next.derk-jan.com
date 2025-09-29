@@ -2,8 +2,15 @@
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/transitions.css";
 
+type Props = {
+  title: string;
+  "slides-class"?: string;
+};
+
 const { title, "slides-class": slidesClass } = Astro.props;
 const currentPath = Astro.url.pathname;
+
+const slideNumber = Number(title.split(" ")[1]?.split(":").shift() || "-1");
 ---
 
 <Layout
@@ -53,6 +60,10 @@ const currentPath = Astro.url.pathname;
 
   <main id="content" class={`${slidesClass ?? "fixed-slides"}`}>
     <slot />
+
+    <footer class="absolute right-0 bottom-0 p-6 text-sm opacity-75">
+      {slideNumber > 0 ? slideNumber : "??"} / 50
+    </footer>
   </main>
 </Layout>
 
