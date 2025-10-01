@@ -25,6 +25,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301
+  force = true
+
 # Try out combined site
 [[redirects]]
   from = "https://talks.derk-jan.com/"
